@@ -25,7 +25,7 @@ export const activities = [
     match: 95,
     cat: 'stadt', catLabel: 'Stadt',
     emoji: '🏘️', heroLabel: 'Stadt & Spielplatz',
-    image: null,
+    image: 'images/wangen-altstadt.jpg',
     pills: [
       { kind: 'dist', text: '📍 15–18 km · 20 min' },
       { kind: 'mixed', text: 'Outdoor (Cafes-Backup)' },
@@ -48,7 +48,7 @@ export const activities = [
     match: 92,
     cat: 'stadt', catLabel: 'Stadt',
     emoji: '🏛️', heroLabel: 'Stadt & Park',
-    image: null,
+    image: 'images/isny-altstadt.jpg',
     pills: [
       { kind: 'dist', text: '📍 12–15 km · 18 min' },
       { kind: 'mixed', text: 'Outdoor (Cafes)' },
@@ -71,7 +71,7 @@ export const activities = [
     match: 87,
     cat: 'kultur', catLabel: 'Kultur',
     emoji: '🐄', heroLabel: 'Freilichtmuseum',
-    image: null,
+    image: 'images/bauernhausmuseum-wolfegg.jpg',
     pills: [
       { kind: 'dist', text: '📍 22–25 km · 28 min' },
       { kind: 'mixed', text: 'Mixed (drinnen + draussen)' },
@@ -94,7 +94,7 @@ export const activities = [
     match: 87,
     cat: 'natur', catLabel: 'Natur',
     emoji: '🌳', heroLabel: 'Park & Spielplatz',
-    image: null,
+    image: 'images/kisslegg-schlosspark.jpg',
     pills: [
       { kind: 'dist', text: '📍 12–15 km · 18 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -117,7 +117,7 @@ export const activities = [
     match: 87,
     cat: 'natur', catLabel: 'Natur',
     emoji: '🦌', heroLabel: 'Tiergehege gratis',
-    image: null,
+    image: 'images/wildgehege-wolfegg.jpg',
     pills: [
       { kind: 'dist', text: '📍 22–25 km · 28 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -163,7 +163,7 @@ export const activities = [
     match: 87,
     cat: 'stadt', catLabel: 'Stadt',
     emoji: '🏘️', heroLabel: 'Stadt & Markt',
-    image: null,
+    image: 'images/memmingen-altstadt.jpg',
     pills: [
       { kind: 'dist', text: '📍 30–35 km · 30 min' },
       { kind: 'mixed', text: 'Outdoor (Cafes)' },
@@ -186,7 +186,7 @@ export const activities = [
     match: 86,
     cat: 'kultur', catLabel: 'Kultur',
     emoji: '🏰', heroLabel: 'Mittelalterliche Burg',
-    image: null,
+    image: 'images/burg-waldburg.jpg',
     pills: [
       { kind: 'dist', text: '📍 18–22 km · 25 min' },
       { kind: 'mixed', text: 'Mixed (innen + aussen)' },
@@ -209,7 +209,7 @@ export const activities = [
     match: 85,
     cat: 'natur', catLabel: 'Natur',
     emoji: '🦌', heroLabel: 'Tiere & Spielen & Wandern',
-    image: null,
+    image: 'images/tannenbuehl-bad-waldsee.jpg',
     pills: [
       { kind: 'dist', text: '📍 28–32 km · 33 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -255,7 +255,7 @@ export const activities = [
     match: 82,
     cat: 'natur', catLabel: 'Natur',
     emoji: '🐗', heroLabel: 'Tierpark gratis',
-    image: null,
+    image: 'images/wildpark-sonnenhalde.jpg',
     pills: [
       { kind: 'dist', text: '📍 30–35 km · 38 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -347,7 +347,7 @@ export const activities = [
     match: 59, lo: true,
     cat: 'indoor', catLabel: 'Indoor',
     emoji: '🦎', heroLabel: 'Tropenhaus',
-    image: null,
+    image: 'images/reptilienzoo.jpg',
     pills: [
       { kind: 'dist', text: '📍 32–35 km · 38 min' },
       { kind: 'indoor', text: 'Indoor' },

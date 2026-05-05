@@ -26,7 +26,7 @@ export const events = [
     time: '07:00–13:00 Uhr',
     cat: 'markt', catLabel: 'Markt',
     emoji: '🥕', heroLabel: 'Wochenmarkt',
-    image: null,
+    image: 'images/markt-leutkirch.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~3 km · 8 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -49,7 +49,7 @@ export const events = [
     time: '07:00–12:30 Uhr',
     cat: 'markt', catLabel: 'Markt',
     emoji: '🍅', heroLabel: 'Wochenmarkt',
-    image: null,
+    image: 'images/memmingen-altstadt.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~30 km · 30 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -72,7 +72,7 @@ export const events = [
     time: '08:00–13:00 Uhr',
     cat: 'markt', catLabel: 'Markt',
     emoji: '🧀', heroLabel: 'Grosser Wochenmarkt',
-    image: null,
+    image: 'images/wangen-altstadt.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~22 km · 25 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -95,7 +95,7 @@ export const events = [
     time: '07:30–13:00 Uhr (verifizieren!)',
     cat: 'markt', catLabel: 'Markt',
     emoji: '🌸', heroLabel: 'Wochenmarkt',
-    image: null,
+    image: 'images/markt-bad-wurzach.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~17 km · 22 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -118,7 +118,7 @@ export const events = [
     time: '11:30–12:30 Uhr',
     cat: 'event', catLabel: 'Fuehrung',
     emoji: '🎓', heroLabel: 'Museums-Fuehrung',
-    image: null,
+    image: 'images/bauernhausmuseum-wolfegg.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~25 km · 30 min' },
       { kind: 'mixed', text: 'Mixed' },
@@ -141,7 +141,7 @@ export const events = [
     time: 'ab 08:00 Uhr',
     cat: 'event', catLabel: 'Event',
     emoji: '🎺', heroLabel: 'Musikveranstaltung',
-    image: null,
+    image: 'images/blaeserjugend.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~3 km · 8 min' },
       { kind: 'indoor', text: 'Indoor (Halle)' },
@@ -164,7 +164,7 @@ export const events = [
     time: '08:00–16:00 Uhr',
     cat: 'markt', catLabel: 'Markt',
     emoji: '🛍️', heroLabel: 'Flohmarkt',
-    image: null,
+    image: 'images/flohmarkt.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~3 km · 8 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -187,7 +187,7 @@ export const events = [
     time: '09:00–13:00 Uhr',
     cat: 'markt', catLabel: 'Markt',
     emoji: '🥬', heroLabel: 'Bio- & Regional-Markt',
-    image: null,
+    image: 'images/wangen-altstadt.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~22 km · 25 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -210,7 +210,7 @@ export const events = [
     time: '07:00–12:30 Uhr',
     cat: 'markt', catLabel: 'Markt',
     emoji: '🍞', heroLabel: 'Wochenmarkt Sa',
-    image: null,
+    image: 'images/memmingen-altstadt.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~30 km · 30 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -233,7 +233,7 @@ export const events = [
     time: 'ab 08:00 Uhr (verifizieren)',
     cat: 'markt', catLabel: 'Markt',
     emoji: '🥖', heroLabel: 'Wochenmarkt',
-    image: null,
+    image: 'images/kisslegg-schlosspark.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~13 km · 18 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -256,7 +256,7 @@ export const events = [
     time: '11:30 Fuehrung · 13:00 Wollprojekt',
     cat: 'event', catLabel: 'Museum',
     emoji: '🏛️', heroLabel: 'Internat. Museumstag',
-    image: null,
+    image: 'images/bauernhausmuseum-wolfegg.jpg',
     pills: [
       { kind: 'dist', text: '📍 ~25 km · 30 min' },
       { kind: 'mixed', text: 'Mixed' },
