@@ -11,9 +11,9 @@ export function initSlideshow() {
     acts: document.getElementById('slidesActs'),
     events: document.getElementById('slidesEvents')
   };
-  const counter = document.getElementById('counter');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
+  const counter = document.getElementById('counter');     // optional
+  const prevBtn = document.getElementById('prevBtn');     // optional
+  const nextBtn = document.getElementById('nextBtn');     // optional
   const pastBar = document.getElementById('pastBar');
   const pastBarText = document.getElementById('pastBarText');
   const pastBarBtn = document.getElementById('pastBarBtn');
@@ -78,15 +78,16 @@ export function initSlideshow() {
   function updateCounter() {
     const list = activeSlides(mode);
     if (list.length === 0) {
-      counter.innerHTML = '<strong>0</strong> / 0';
-      prevBtn.disabled = true; nextBtn.disabled = true;
+      if (counter) counter.innerHTML = '<strong>0</strong> / 0';
+      if (prevBtn) prevBtn.disabled = true;
+      if (nextBtn) nextBtn.disabled = true;
       return;
     }
     const idx = Math.max(0, Math.min(list.length - 1, state[mode].idx));
     state[mode].idx = idx;
-    counter.innerHTML = `<strong>${idx + 1}</strong> / ${list.length}`;
-    prevBtn.disabled = idx === 0;
-    nextBtn.disabled = idx === list.length - 1;
+    if (counter) counter.innerHTML = `<strong>${idx + 1}</strong> / ${list.length}`;
+    if (prevBtn) prevBtn.disabled = idx === 0;
+    if (nextBtn) nextBtn.disabled = idx === list.length - 1;
   }
 
   function goTo(idx, smooth) {
@@ -147,9 +148,9 @@ export function initSlideshow() {
 
   // Wire-up
   tabs.forEach(t => t.addEventListener('click', () => setMode(t.dataset.mode)));
-  prevBtn.addEventListener('click', () => goTo(state[mode].idx - 1, true));
-  nextBtn.addEventListener('click', () => goTo(state[mode].idx + 1, true));
-  pastBarBtn.addEventListener('click', togglePast);
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(state[mode].idx - 1, true));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(state[mode].idx + 1, true));
+  if (pastBarBtn) pastBarBtn.addEventListener('click', togglePast);
 
   // IntersectionObserver per container — tracks active slide on swipe
   Object.keys(containers).forEach(k => {

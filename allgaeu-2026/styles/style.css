@@ -136,18 +136,17 @@ strong { font-weight: 700; }
 
 /* ===== Layout: Slides container (native swipe) ===== */
 .slides {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
   overflow-x: auto;
-  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
-  align-items: stretch;
   touch-action: pan-x pinch-zoom;
 }
 .slides::-webkit-scrollbar { display: none; }
 .slide {
-  flex: 0 0 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   padding: 1rem 0.85rem 1.5rem;
