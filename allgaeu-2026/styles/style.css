@@ -27,18 +27,22 @@
 
 /* ===== Base ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; height: 100%; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-ui);
   background: var(--bg); color: var(--text);
   line-height: 1.55; font-size: 15px;
   -webkit-text-size-adjust: 100%;
-  height: 100vh;
-  height: 100dvh;
-  display: flex; flex-direction: column;
-  overflow: hidden;
-  overscroll-behavior-y: contain;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ===== Sticky Topbar (header + tabs) ===== */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--inkwell);
 }
 
 a { color: var(--creme); text-decoration: none; }
@@ -51,7 +55,6 @@ strong { font-weight: 700; }
 .site-header {
   background: var(--inkwell); color: var(--aulait);
   padding: calc(0.95rem + env(safe-area-inset-top)) 1.1rem 0.9rem;
-  flex-shrink: 0;
 }
 .site-header h1 {
   font-family: var(--font-display);
@@ -68,7 +71,6 @@ strong { font-weight: 700; }
 .mode-tabs {
   background: var(--card); border-bottom: 1px solid var(--border);
   display: flex; padding: 0 0.4rem;
-  flex-shrink: 0;
   box-shadow: var(--shadow-sm);
 }
 .mode-tab {
@@ -94,8 +96,7 @@ strong { font-weight: 700; }
 .counter-strip {
   display: flex; align-items: center; gap: 0.5rem;
   padding: 0.55rem 0.9rem;
-  background: var(--bg); border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
+  background: var(--bg); border-top: 1px solid var(--border);
 }
 .counter-strip .counter {
   flex: 1; text-align: center;
@@ -135,25 +136,21 @@ strong { font-weight: 700; }
 
 /* ===== Layout: Slides container (native swipe) ===== */
 .slides {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: flex; overflow-x: auto; overflow-y: hidden;
+  display: flex;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
+  align-items: stretch;
 }
 .slides::-webkit-scrollbar { display: none; }
 .slide {
   flex: 0 0 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  padding: 1rem 0.85rem calc(1.5rem + env(safe-area-inset-bottom));
+  padding: 1rem 0.85rem 1.5rem;
   min-width: 0;
-  height: 100%;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
 }
 .slide.past { display: none; }
 
@@ -164,7 +161,7 @@ strong { font-weight: 700; }
   box-shadow: var(--shadow-md);
   overflow: hidden;
   display: flex; flex-direction: column;
-  min-height: 100%;
+  width: 100%;
 }
 
 /* ===== Component: Hero strip ===== */
@@ -349,7 +346,6 @@ a.pill.dist:hover { text-decoration: underline; }
 
 /* ===== Component: Empty state ===== */
 .empty-state {
-  flex: 1;
   display: flex; align-items: center; justify-content: center;
   padding: 3rem 1.5rem; text-align: center;
   font-family: var(--font-display); color: var(--muted);
