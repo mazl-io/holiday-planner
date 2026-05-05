@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2C3639">
+<meta name="description" content="Allgaeu — Aktivitaeten & Events fuer den Center Parcs Aufenthalt 11.–17.05.2026">
+<title>Allgaeu — Ideen vor Ort</title>
+<link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1><span>Allgaeu — Ideen vor Ort</span></h1>
+  <div class="sub">11.–17.05.2026 · Center Parcs · wischen ↔</div>
+</header>
+
+<nav class="mode-tabs" role="tablist">
+  <button class="mode-tab active" role="tab" data-mode="acts" aria-selected="true">
+    Aktivitaeten <span class="badge" id="badgeActs">–</span>
+  </button>
+  <button class="mode-tab" role="tab" data-mode="events" aria-selected="false">
+    Events <span class="badge" id="badgeEvents">–</span>
+  </button>
+</nav>
+
+<div class="counter-strip">
+  <button class="nav-btn" id="prevBtn" aria-label="Vorige Karte">‹</button>
+  <div class="counter" id="counter"><strong>1</strong> / 1</div>
+  <button class="nav-btn" id="nextBtn" aria-label="Naechste Karte">›</button>
+</div>
+
+<div class="past-bar" id="pastBar">
+  <span id="pastBarText"></span>
+  <button id="pastBarBtn" type="button">einblenden</button>
+</div>
+
+<section class="slides" id="slidesActs" role="tabpanel" aria-label="Aktivitaeten"></section>
+<section class="slides hidden" id="slidesEvents" role="tabpanel" aria-label="Events"></section>
+
+<div class="empty-state hidden" id="emptyState">
+  <div>
+    <div class="emoji">📭</div>
+    <div class="msg">Alle Events der Reise sind vorbei.</div>
+  </div>
+</div>
+
+<div class="swipe-hint" id="swipeHint">↔ wischen oder Pfeile</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
