@@ -140,10 +140,10 @@ strong { font-weight: 700; }
   grid-auto-flow: column;
   grid-auto-columns: 100%;
   overflow-x: auto;
+  overflow-y: clip;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
-  touch-action: pan-x pinch-zoom;
 }
 .slides::-webkit-scrollbar { display: none; }
 .slide {
