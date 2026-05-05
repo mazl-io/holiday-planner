@@ -286,6 +286,8 @@ strong { font-weight: 700; }
   white-space: nowrap; border: 1px solid var(--border);
 }
 .pill.dist { background: var(--card); }
+a.pill { text-decoration: none; color: inherit; cursor: pointer; }
+a.pill.dist:hover { text-decoration: underline; }
 .pill.cat  { background: var(--inkwell); color: var(--aulait); border-color: var(--inkwell); }
 .pill.indoor   { background: #e6e8e3; color: var(--lunar); }
 .pill.outdoor  { background: #ece4d2; color: #6b4e2e; }

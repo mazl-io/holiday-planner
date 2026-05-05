@@ -7,10 +7,16 @@ function escapeAttr(s) {
   ));
 }
 
-function renderPills(pills = []) {
-  return pills.map(p =>
-    `<span class="pill ${p.kind || ''}">${p.text}</span>`
-  ).join('');
+function renderPills(pills = [], mapsQuery = null) {
+  const mapsUrl = mapsQuery
+    ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(mapsQuery)}`
+    : null;
+  return pills.map(p => {
+    if (p.kind === 'dist' && mapsUrl) {
+      return `<a class="pill dist maps-link" href="${escapeAttr(mapsUrl)}" target="_blank" rel="noopener">${p.text}</a>`;
+    }
+    return `<span class="pill ${p.kind || ''}">${p.text}</span>`;
+  }).join('');
 }
 
 function renderInfo(info = []) {
@@ -52,7 +58,7 @@ export function renderActivityCard(act) {
             <div class="title">${act.title}</div>
             <div class="subtitle">${act.subtitle}</div>
           </div>
-          <div class="pills">${renderPills(act.pills)}</div>
+          <div class="pills">${renderPills(act.pills, act.mapsQuery)}</div>
           <div class="info">${renderInfo(act.info)}</div>
           <p class="desc">${act.desc}</p>
           <a class="link-btn" href="${escapeAttr(act.url)}" target="_blank" rel="noopener">${act.urlLabel}</a>
@@ -83,7 +89,7 @@ export function renderEventCard(ev) {
             <div class="subtitle">${ev.subtitle}</div>
           </div>
           ${ev.time ? `<div class="time-line"><span class="lbl">Zeit</span> ${ev.time}</div>` : ''}
-          <div class="pills">${renderPills(ev.pills)}</div>
+          <div class="pills">${renderPills(ev.pills, ev.mapsQuery)}</div>
           <div class="info">${renderInfo(ev.info)}</div>
           <p class="desc">${ev.desc}</p>
           <a class="link-btn" href="${escapeAttr(ev.url)}" target="_blank" rel="noopener">${ev.urlLabel}</a>
