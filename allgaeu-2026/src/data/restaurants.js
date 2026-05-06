@@ -10,6 +10,12 @@
 //   id, mapsQuery, title, subtitle, cat='restaurant', catLabel, emoji, heroLabel,
 //   image (null = stylized cover), googleRating, googleReviews,
 //   pills [{ kind, text }], info [{ k, v, state }], desc, url, urlLabel
+//
+// Preis-Konvention im pill-Eintrag mit kind='price':
+//   text: 'Preis €'   = guenstig (Hauptgerichte < 15 EUR)
+//   text: 'Preis €€'  = mittel   (15–30 EUR)
+//   text: 'Preis €€€' = gehoben  (> 30 EUR)
+//   text: 'Preis ?'   = unbekannt
 
 export const restaurants = [
   {
@@ -24,7 +30,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 7 km · 12 min' },
       { kind: 'cuisine', text: 'Italienisch' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -48,7 +54,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 7 km · 12 min' },
       { kind: 'cuisine', text: 'Allgäuer Küche' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'ja', state: 'ok' },
@@ -72,7 +78,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 8 km · 13 min' },
       { kind: 'cuisine', text: 'Thai' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'ja', state: 'ok' },
@@ -96,7 +102,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 7 km · 12 min' },
       { kind: 'cuisine', text: 'Griechisch' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'ja', state: 'ok' },
@@ -120,7 +126,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 14 km · 18 min' },
       { kind: 'cuisine', text: 'Modern' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -144,7 +150,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 14 km · 18 min' },
       { kind: 'cuisine', text: 'Regional/Mediterran' },
-      { kind: 'price', text: '€€€' }
+      { kind: 'price', text: 'Preis €€€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -168,7 +174,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 8 km · 14 min' },
       { kind: 'cuisine', text: 'Allgäuer/Italienisch' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -192,7 +198,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 12 km · 16 min' },
       { kind: 'cuisine', text: 'Regional' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -216,7 +222,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 1 km · 3 min' },
       { kind: 'cuisine', text: 'Allgäuer Küche' },
-      { kind: 'price', text: '€€€' }
+      { kind: 'price', text: 'Preis €€€' }
     ],
     info: [
       { k: 'Hund', v: 'ja', state: 'ok' },
@@ -240,7 +246,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 7 km · 11 min' },
       { kind: 'cuisine', text: 'Schwäbisch/Bayerisch' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'ja', state: 'ok' },
@@ -264,7 +270,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 8 km · 13 min' },
       { kind: 'cuisine', text: 'Italienisch' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -288,7 +294,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 6 km · 10 min' },
       { kind: 'cuisine', text: 'Allgäuer Küche' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -312,7 +318,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 7 km · 11 min' },
       { kind: 'cuisine', text: 'Allgäuer Küche' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'ja', state: 'ok' },
@@ -336,7 +342,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 4 km · 7 min' },
       { kind: 'cuisine', text: 'Hausmannskost' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -360,7 +366,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 14 km · 18 min' },
       { kind: 'cuisine', text: 'Regional' },
-      { kind: 'price', text: '€€€' }
+      { kind: 'price', text: 'Preis €€€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -384,7 +390,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 19 km · 23 min' },
       { kind: 'cuisine', text: 'Griechisch' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -408,7 +414,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 19 km · 23 min' },
       { kind: 'cuisine', text: 'Chinesisch' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
@@ -432,7 +438,7 @@ export const restaurants = [
     pills: [
       { kind: 'dist', text: '📍 12 km · 16 min' },
       { kind: 'cuisine', text: 'Allgäuer Küche' },
-      { kind: 'price', text: '€€' }
+      { kind: 'price', text: 'Preis €€' }
     ],
     info: [
       { k: 'Hund', v: 'ja', state: 'ok' },
