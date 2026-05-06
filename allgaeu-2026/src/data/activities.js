@@ -27,6 +27,7 @@ export const activities = [
     cat: 'stadt', catLabel: 'Stadt',
     emoji: '🏘️', heroLabel: 'Stadt & Spielplatz',
     image: 'images/wangen-altstadt.jpg',
+    googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 15–18 km · 20 min' },
       { kind: 'mixed', text: 'Outdoor (Cafes-Backup)' },
@@ -51,6 +52,7 @@ export const activities = [
     cat: 'stadt', catLabel: 'Stadt',
     emoji: '🏛️', heroLabel: 'Stadt & Park',
     image: 'images/isny-altstadt.jpg',
+    googleRating: 4.5,
     pills: [
       { kind: 'dist', text: '📍 12–15 km · 18 min' },
       { kind: 'mixed', text: 'Outdoor (Cafes)' },
@@ -75,6 +77,7 @@ export const activities = [
     cat: 'kultur', catLabel: 'Kultur',
     emoji: '🐄', heroLabel: 'Freilichtmuseum',
     image: 'images/bauernhausmuseum-wolfegg.jpg',
+    googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 22–25 km · 28 min' },
       { kind: 'mixed', text: 'Mixed (drinnen + draußen)' },
@@ -99,6 +102,7 @@ export const activities = [
     cat: 'natur', catLabel: 'Natur',
     emoji: '🌳', heroLabel: 'Park & Spielplatz',
     image: 'images/kisslegg-schlosspark.jpg',
+    googleRating: 4.5,
     pills: [
       { kind: 'dist', text: '📍 12–15 km · 18 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -123,6 +127,7 @@ export const activities = [
     cat: 'natur', catLabel: 'Natur',
     emoji: '🦌', heroLabel: 'Tiergehege gratis',
     image: 'images/wildgehege-wolfegg.jpg',
+    googleRating: 4.4,
     pills: [
       { kind: 'dist', text: '📍 22–25 km · 28 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -147,6 +152,7 @@ export const activities = [
     cat: 'kultur', catLabel: 'Kultur',
     emoji: '🏰', heroLabel: 'Aussicht & Park',
     image: 'images/schloss-zeil.jpg',
+    googleRating: 4.5,
     pills: [
       { kind: 'dist', text: '📍 5–8 km · 12 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -171,6 +177,7 @@ export const activities = [
     cat: 'stadt', catLabel: 'Stadt',
     emoji: '🏘️', heroLabel: 'Stadt & Markt',
     image: 'images/memmingen-altstadt.jpg',
+    googleRating: 4.5,
     pills: [
       { kind: 'dist', text: '📍 30–35 km · 30 min' },
       { kind: 'mixed', text: 'Outdoor (Cafes)' },
@@ -195,6 +202,7 @@ export const activities = [
     cat: 'kultur', catLabel: 'Kultur',
     emoji: '🏰', heroLabel: 'Mittelalterliche Burg',
     image: 'images/burg-waldburg.jpg',
+    googleRating: 4.4,
     pills: [
       { kind: 'dist', text: '📍 18–22 km · 25 min' },
       { kind: 'mixed', text: 'Mixed (innen + aussen)' },
@@ -219,6 +227,7 @@ export const activities = [
     cat: 'natur', catLabel: 'Natur',
     emoji: '🦌', heroLabel: 'Tiere & Spielen & Wandern',
     image: 'images/tannenbuehl-bad-waldsee.jpg',
+    googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 28–32 km · 33 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -243,6 +252,7 @@ export const activities = [
     cat: 'natur', catLabel: 'Natur',
     emoji: '🌾', heroLabel: 'Moor-Wanderung',
     image: 'images/wurzacher-ried.jpg',
+    googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 18–22 km · 23 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -267,6 +277,7 @@ export const activities = [
     cat: 'natur', catLabel: 'Natur',
     emoji: '🐗', heroLabel: 'Tierpark gratis',
     image: 'images/wildpark-sonnenhalde.jpg',
+    googleRating: 4.5,
     pills: [
       { kind: 'dist', text: '📍 30–35 km · 38 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -291,6 +302,7 @@ export const activities = [
     cat: 'highlight', catLabel: 'Highlight',
     emoji: '🌉', heroLabel: 'Baumwipfelpfad',
     image: 'images/skywalk-allgaeu.jpg',
+    googleRating: 4.5,
     pills: [
       { kind: 'dist', text: '📍 32–35 km · 38 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -315,6 +327,7 @@ export const activities = [
     cat: 'indoor', catLabel: 'Indoor',
     emoji: '🎈', heroLabel: 'Indoor-Spielpark',
     image: 'images/kiddiko.jpg',
+    googleRating: 4.2,
     pills: [
       { kind: 'dist', text: '📍 30–35 km · 30 min' },
       { kind: 'indoor', text: 'Indoor' },
@@ -339,6 +352,7 @@ export const activities = [
     cat: 'indoor', catLabel: 'Indoor',
     emoji: '♨️', heroLabel: 'Therme',
     image: 'images/schwaben-therme.jpg',
+    googleRating: 4.2,
     pills: [
       { kind: 'dist', text: '📍 35–40 km · 38 min' },
       { kind: 'indoor', text: 'Indoor' },
@@ -363,6 +377,7 @@ export const activities = [
     cat: 'indoor', catLabel: 'Indoor',
     emoji: '🦎', heroLabel: 'Tropenhaus',
     image: 'images/reptilienzoo.jpg',
+    googleRating: 4.4,
     pills: [
       { kind: 'dist', text: '📍 32–35 km · 38 min' },
       { kind: 'indoor', text: 'Indoor' },

@@ -19,6 +19,13 @@ function renderPills(pills = [], mapsQuery = null) {
   }).join('');
 }
 
+function renderRatingPill(rating) {
+  if (rating == null) {
+    return `<span class="pill rating-none" title="Keine Google-Bewertung verfügbar">★ –</span>`;
+  }
+  return `<span class="pill rating" title="Google-Bewertung">★ ${rating.toFixed(1)}</span>`;
+}
+
 function renderInfo(info = []) {
   return info.map(i =>
     `<div class="row"><span class="k">${i.k}</span><span class="v ${i.state || ''}">${i.v}</span></div>`
@@ -58,7 +65,7 @@ export function renderActivityCard(act) {
             <div class="title">${act.title}</div>
             <div class="subtitle">${act.subtitle}</div>
           </div>
-          <div class="pills">${renderPills(act.pills, act.mapsQuery)}</div>
+          <div class="pills">${renderRatingPill(act.googleRating)}${renderPills(act.pills, act.mapsQuery)}</div>
           <div class="info">${renderInfo(act.info)}</div>
           <p class="desc">${act.desc}</p>
           <a class="link-btn" href="${escapeAttr(act.url)}" target="_blank" rel="noopener">${act.urlLabel}</a>
@@ -89,7 +96,7 @@ export function renderEventCard(ev) {
             <div class="subtitle">${ev.subtitle}</div>
           </div>
           ${ev.time ? `<div class="time-line"><span class="lbl">Zeit</span> ${ev.time}</div>` : ''}
-          <div class="pills">${renderPills(ev.pills, ev.mapsQuery)}</div>
+          <div class="pills">${renderRatingPill(ev.googleRating)}${renderPills(ev.pills, ev.mapsQuery)}</div>
           <div class="info">${renderInfo(ev.info)}</div>
           <p class="desc">${ev.desc}</p>
           <a class="link-btn" href="${escapeAttr(ev.url)}" target="_blank" rel="noopener">${ev.urlLabel}</a>

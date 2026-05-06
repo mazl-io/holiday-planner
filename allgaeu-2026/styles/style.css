@@ -297,6 +297,8 @@ a.pill.dist:hover { text-decoration: underline; }
 .pill.mixed    { background: var(--aulait-hi); color: var(--lunar); }
 .pill.free  { background: var(--aulait-hi); color: #6b4e2e; }
 .pill.warn  { background: #f0e2d2; color: #8a3e1c; border-color: #d9b89a; }
+.pill.rating       { background: #fef7e6; color: #8a5e0e; border-color: #e8d4a0; }
+.pill.rating-none  { background: var(--card); color: var(--muted); opacity: 0.55; }
 
 /* ===== Component: Info grid ===== */
 .info {

@@ -28,6 +28,7 @@ export const events = [
     cat: 'markt', catLabel: 'Markt',
     emoji: '🥕', heroLabel: 'Wochenmarkt',
     image: 'images/markt-leutkirch.jpg',
+    googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~3 km · 8 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -52,6 +53,7 @@ export const events = [
     cat: 'markt', catLabel: 'Markt',
     emoji: '🍅', heroLabel: 'Wochenmarkt',
     image: 'images/memmingen-altstadt.jpg',
+    googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~30 km · 30 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -76,6 +78,7 @@ export const events = [
     cat: 'markt', catLabel: 'Markt',
     emoji: '🧀', heroLabel: 'Großer Wochenmarkt',
     image: 'images/wangen-altstadt.jpg',
+    googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~22 km · 25 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -100,6 +103,7 @@ export const events = [
     cat: 'markt', catLabel: 'Markt',
     emoji: '🌸', heroLabel: 'Wochenmarkt',
     image: 'images/markt-bad-wurzach.jpg',
+    googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~17 km · 22 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -124,6 +128,7 @@ export const events = [
     cat: 'event', catLabel: 'Führung',
     emoji: '🎓', heroLabel: 'Museums-Führung',
     image: 'images/bauernhausmuseum-wolfegg.jpg',
+    googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 ~25 km · 30 min' },
       { kind: 'mixed', text: 'Mixed' },
@@ -148,6 +153,7 @@ export const events = [
     cat: 'event', catLabel: 'Event',
     emoji: '🎺', heroLabel: 'Musikveranstaltung',
     image: 'images/blaeserjugend.jpg',
+    googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~3 km · 8 min' },
       { kind: 'indoor', text: 'Indoor (Halle)' },
@@ -172,6 +178,7 @@ export const events = [
     cat: 'markt', catLabel: 'Markt',
     emoji: '🛍️', heroLabel: 'Flohmarkt',
     image: 'images/flohmarkt.jpg',
+    googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~3 km · 8 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -196,6 +203,7 @@ export const events = [
     cat: 'markt', catLabel: 'Markt',
     emoji: '🥬', heroLabel: 'Bio- & Regional-Markt',
     image: 'images/wangen-altstadt.jpg',
+    googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~22 km · 25 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -220,6 +228,7 @@ export const events = [
     cat: 'markt', catLabel: 'Markt',
     emoji: '🍞', heroLabel: 'Wochenmarkt Sa',
     image: 'images/memmingen-altstadt.jpg',
+    googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~30 km · 30 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -244,6 +253,7 @@ export const events = [
     cat: 'markt', catLabel: 'Markt',
     emoji: '🥖', heroLabel: 'Wochenmarkt',
     image: 'images/kisslegg-schlosspark.jpg',
+    googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~13 km · 18 min' },
       { kind: 'outdoor', text: 'Outdoor' },
@@ -268,6 +278,7 @@ export const events = [
     cat: 'event', catLabel: 'Museum',
     emoji: '🏛️', heroLabel: 'Internat. Museumstag',
     image: 'images/bauernhausmuseum-wolfegg.jpg',
+    googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 ~25 km · 30 min' },
       { kind: 'mixed', text: 'Mixed' },
@@ -293,6 +304,7 @@ export const events = [
     cat: 'event', catLabel: 'Ausstellung',
     emoji: '🎨', heroLabel: 'Karl-Hofer-Ausstellung',
     image: 'images/schloss-achberg.jpg',
+    googleRating: 4.4,
     pills: [
       { kind: 'dist', text: '📍 ~38 km · 40 min' },
       { kind: 'indoor', text: 'Indoor' },
