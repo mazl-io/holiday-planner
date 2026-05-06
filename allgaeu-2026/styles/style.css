@@ -76,12 +76,13 @@ strong { font-weight: 700; }
 .mode-tab {
   flex: 1; min-height: 50px;
   background: none; border: none; color: var(--muted);
-  font: inherit; font-size: 0.92rem; font-weight: 600;
+  font: inherit; font-size: 0.85rem; font-weight: 600;
   letter-spacing: 0.01em;
-  padding: 0.85rem 0.5rem; cursor: pointer;
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+  padding: 0.85rem 0.3rem; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.3rem;
   border-bottom: 2px solid transparent;
   transition: color 0.18s, border-color 0.18s;
+  white-space: nowrap;
 }
 .mode-tab.active { color: var(--inkwell); border-bottom-color: var(--creme); }
 .mode-tab .badge {
@@ -196,13 +197,14 @@ strong { font-weight: 700; }
 }
 
 /* Category gradients */
-.hero.cat-natur     { background: linear-gradient(135deg, #3F4E4F 0%, #5d6e6f 100%); color: var(--aulait); }
-.hero.cat-kultur    { background: linear-gradient(135deg, #2C3639 0%, #4a4239 100%); color: var(--aulait); }
-.hero.cat-stadt     { background: linear-gradient(135deg, #DCD7C9 0%, #b39d7e 100%); color: var(--inkwell); }
-.hero.cat-indoor    { background: linear-gradient(135deg, #DCD7C9 0%, #8a8f86 100%); color: var(--inkwell); }
-.hero.cat-markt     { background: linear-gradient(135deg, #c19d76 0%, #DCD7C9 100%); color: var(--inkwell); }
-.hero.cat-event     { background: linear-gradient(135deg, #3F4E4F 0%, #A27B5B 100%); color: var(--aulait); }
-.hero.cat-highlight { background: linear-gradient(135deg, #2C3639 0%, #A27B5B 80%, #DCD7C9 100%); color: var(--aulait); }
+.hero.cat-natur      { background: linear-gradient(135deg, #3F4E4F 0%, #5d6e6f 100%); color: var(--aulait); }
+.hero.cat-kultur     { background: linear-gradient(135deg, #2C3639 0%, #4a4239 100%); color: var(--aulait); }
+.hero.cat-stadt      { background: linear-gradient(135deg, #DCD7C9 0%, #b39d7e 100%); color: var(--inkwell); }
+.hero.cat-indoor     { background: linear-gradient(135deg, #DCD7C9 0%, #8a8f86 100%); color: var(--inkwell); }
+.hero.cat-markt      { background: linear-gradient(135deg, #c19d76 0%, #DCD7C9 100%); color: var(--inkwell); }
+.hero.cat-event      { background: linear-gradient(135deg, #3F4E4F 0%, #A27B5B 100%); color: var(--aulait); }
+.hero.cat-restaurant { background: linear-gradient(135deg, #b85e3a 0%, #e0a06f 100%); color: var(--aulait); }
+.hero.cat-highlight  { background: linear-gradient(135deg, #2C3639 0%, #A27B5B 80%, #DCD7C9 100%); color: var(--aulait); }
 
 /* ===== Component: Hero pills/badges ===== */
 .cat-pill {
@@ -235,6 +237,12 @@ strong { font-weight: 700; }
   opacity: 0.85; margin-top: 0.18rem;
 }
 .match-badge.lo { background: var(--lunar); }
+.match-badge.rating-badge {
+  background: #d8a945;
+  box-shadow: 0 6px 18px rgba(216,169,69,0.45);
+}
+.match-badge.rating-badge .num { font-size: 1.05rem; letter-spacing: 0; }
+.match-badge.rating-badge .label { font-size: 0.5rem; letter-spacing: 0.06em; }
 
 .date-stamp {
   position: absolute; top: 0.85rem; right: 0.85rem;
@@ -299,6 +307,8 @@ a.pill.dist:hover { text-decoration: underline; }
 .pill.warn  { background: #f0e2d2; color: #8a3e1c; border-color: #d9b89a; }
 .pill.rating       { background: #fef7e6; color: #8a5e0e; border-color: #e8d4a0; }
 .pill.rating-none  { background: var(--card); color: var(--muted); opacity: 0.55; }
+.pill.cuisine      { background: var(--aulait-hi); color: var(--lunar); }
+.pill.price        { background: var(--card); color: var(--inkwell); }
 
 /* ===== Component: Info grid ===== */
 .info {

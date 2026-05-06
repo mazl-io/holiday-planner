@@ -9,7 +9,8 @@ export function initSlideshow() {
   const tabs = Array.from(document.querySelectorAll('.mode-tab'));
   const containers = {
     acts: document.getElementById('slidesActs'),
-    events: document.getElementById('slidesEvents')
+    events: document.getElementById('slidesEvents'),
+    restaurants: document.getElementById('slidesRestaurants')
   };
   const counter = document.getElementById('counter');     // optional
   const prevBtn = document.getElementById('prevBtn');     // optional
@@ -43,12 +44,13 @@ export function initSlideshow() {
     return all.filter(s => !s.classList.contains('past'));
   }
 
-  const state = { acts: { idx: 0 }, events: { idx: 0 } };
+  const state = { acts: { idx: 0 }, events: { idx: 0 }, restaurants: { idx: 0 } };
   let mode = 'acts';
 
   function refreshBadges() {
     document.getElementById('badgeActs').textContent = activeSlides('acts').length;
     document.getElementById('badgeEvents').textContent = activeSlides('events').length;
+    document.getElementById('badgeRestaurants').textContent = activeSlides('restaurants').length;
   }
 
   function refreshPastBar() {
@@ -181,6 +183,7 @@ export function initSlideshow() {
     if (e.key === 'ArrowLeft')  { goTo(state[mode].idx - 1, true); e.preventDefault(); }
     if (e.key === '1') setMode('acts');
     if (e.key === '2') setMode('events');
+    if (e.key === '3') setMode('restaurants');
   });
 
   // Initial — hide past events visually
@@ -189,7 +192,7 @@ export function initSlideshow() {
   });
 
   // Deep-link via hash
-  const hash = window.location.hash.match(/^#(acts|events)-(\d+)$/);
+  const hash = window.location.hash.match(/^#(acts|events|restaurants)-(\d+)$/);
   if (hash) {
     setMode(hash[1]);
     setTimeout(() => goTo(parseInt(hash[2], 10) - 1, false), 30);
