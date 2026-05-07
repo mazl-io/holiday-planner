@@ -241,8 +241,6 @@ strong { font-weight: 700; }
   background: #d8a945;
   box-shadow: 0 6px 18px rgba(216,169,69,0.45);
 }
-.match-badge.rating-badge .num { font-size: 1.05rem; letter-spacing: 0; }
-.match-badge.rating-badge .label { font-size: 0.5rem; letter-spacing: 0.06em; }
 
 .date-stamp {
   position: absolute; top: 0.85rem; right: 0.85rem;

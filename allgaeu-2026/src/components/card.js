@@ -78,15 +78,14 @@ export function renderActivityCard(act) {
 export function renderRestaurantCard(r) {
   // Restaurants nutzen statt Match-Score eine Rating-Badge mit den Sternen.
   const ratingNum = r.googleRating != null ? r.googleRating.toFixed(1) : '–';
-  const reviewsTxt = r.googleReviews != null ? `${r.googleReviews.toLocaleString('de-DE')} Bew.` : '';
   return `
     <article class="slide" data-id="${r.id}">
       <div class="slide-card">
         ${heroOpenTag(r)}
           <span class="cat-pill">${r.catLabel}</span>
           <span class="match-badge rating-badge">
-            <span class="num">★ ${ratingNum}</span>
-            <span class="label">${reviewsTxt}</span>
+            <span class="num">${ratingNum}</span>
+            <span class="label">Google</span>
           </span>
           ${heroBody(r)}
         </div>

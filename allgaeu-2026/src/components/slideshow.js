@@ -154,6 +154,38 @@ export function initSlideshow() {
   if (nextBtn) nextBtn.addEventListener('click', () => goTo(state[mode].idx + 1, true));
   if (pastBarBtn) pastBarBtn.addEventListener('click', togglePast);
 
+  // Mouse drag-to-swipe (desktop): Click+Halten und horizontal ziehen
+  Object.values(containers).forEach(root => {
+    let isDown = false, startX = 0, startScroll = 0, moved = false;
+    root.addEventListener('mousedown', (e) => {
+      // Bei Klicks auf Links/Buttons NICHT als Drag interpretieren
+      if (e.target.closest('a, button, input, textarea, select')) return;
+      isDown = true; moved = false;
+      startX = e.pageX;
+      startScroll = root.scrollLeft;
+      root.style.cursor = 'grabbing';
+      root.style.userSelect = 'none';
+    });
+    root.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      const dx = e.pageX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      root.scrollLeft = startScroll - dx;
+    });
+    const end = () => {
+      if (!isDown) return;
+      isDown = false;
+      root.style.cursor = '';
+      root.style.userSelect = '';
+    };
+    root.addEventListener('mouseup', end);
+    root.addEventListener('mouseleave', end);
+    // Click-Suppression nach Drag (verhindert versehentliches Link-Öffnen am Drag-Ende)
+    root.addEventListener('click', (e) => {
+      if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
+    }, true);
+  });
+
   // IntersectionObserver per container — tracks active slide on swipe
   Object.keys(containers).forEach(k => {
     const root = containers[k];
