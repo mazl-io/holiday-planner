@@ -1,9 +1,9 @@
 // Bootstrap: lade Daten, render Cards, starte Slideshow.
-import { activities }  from './data/activities.js';
-import { events }      from './data/events.js';
-import { restaurants } from './data/restaurants.js';
-import { renderActivityCard, renderEventCard, renderRestaurantCard } from './components/card.js';
-import { initSlideshow } from './components/slideshow.js';
+import { activities }  from './data/activities.js?v=20260506b';
+import { events }      from './data/events.js?v=20260506b';
+import { restaurants } from './data/restaurants.js?v=20260506b';
+import { renderActivityCard, renderEventCard, renderRestaurantCard } from './components/card.js?v=20260506b';
+import { initSlideshow } from './components/slideshow.js?v=20260506b';
 
 // Aktivitaeten: nach Match desc sortieren (defensiv — Daten sind eh schon sortiert)
 const sortedActs = [...activities].sort((a, b) => b.match - a.match);
