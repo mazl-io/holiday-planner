@@ -120,13 +120,13 @@ export const events = [
   {
     id: 'bauernhausmuseum-fuehrung',
     mapsQuery: 'Bauernhausmuseum Wolfegg',
-    title: 'Bauernhausmuseum — Führung',
-    subtitle: 'Wolfegg · Christi Himmelfahrt 1 h kostenlos',
+    title: 'Bauernhausmuseum — 2 Führungen',
+    subtitle: 'Wolfegg · Christi Himmelfahrt — gratis',
     date: '2026-05-14',
     dateLabel: { month: 'Mai', day: 14, dow: 'Do' },
-    time: '11:30–12:30 Uhr',
+    time: '11:30 Allgem. · 13:00 Kindheiten',
     cat: 'event', catLabel: 'Führung',
-    emoji: '🎓', heroLabel: 'Museums-Führung',
+    emoji: '🎓', heroLabel: 'Museums-Führungen',
     image: 'images/bauernhausmuseum-wolfegg.jpg',
     googleRating: 4.6,
     pills: [
@@ -138,7 +138,7 @@ export const events = [
       { k: 'Hund', v: 'außen ja, innen prüfen', state: 'maybe' },
       { k: 'Kleinkind', v: 'Kinderwagen + Wickel-WC', state: 'ok' }
     ],
-    desc: 'Öffentliche Allgemeine Museumsführung 1 Stunde — Kulturlandschaft + Geschichten zu den 28 historischen Gebäuden. Führung gratis (regulärer Eintritt). Passt vor dem Mittagsschlaf.',
+    desc: 'Zwei Sonderführungen am Christi-Himmelfahrt-Tag: <em>11:30 Allgemeine Museumsführung</em> (1h, gratis) + <em>13:00 Themenführung "Kindheiten auf dem Land"</em> mit historischen Spielsachen. Beide Slots tagsüber, Hund erlaubt im Freilichtbereich.',
     url: 'https://www.bauernhaus-museum.de/programm/',
     urlLabel: 'bauernhaus-museum.de Programm'
   },
@@ -319,5 +319,205 @@ export const events = [
     desc: 'Karl Hofer "Zwischen Schönheit und Wahrheit" 11.04.–18.10.2026. Barockes Schloss-Ensemble. <em>Eher für Erwachsenen-Sub-Group — für 1,5-Jährige uninteressant.</em> Anfahrt am oberen Limit.',
     url: 'https://www.schloss-achberg.de/ausstellung/',
     urlLabel: 'schloss-achberg.de'
+  },
+  {
+    id: 'wasserbueffel-leutkirch-mi',
+    mapsQuery: 'Stadtweiher Leutkirch',
+    title: 'Wanderung zu den Wasserbüffeln',
+    subtitle: 'Leutkirch Stadtweiher · Familienprogramm',
+    date: '2026-05-13',
+    dateLabel: { month: 'Mai', day: 13, dow: 'Mi' },
+    time: '14:30–16:30 Uhr',
+    cat: 'event', catLabel: 'Naturwanderung',
+    emoji: '🐃', heroLabel: 'Familien-Naturwanderung',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~12 km · 18 min' },
+      { kind: 'outdoor', text: 'Outdoor' },
+      { kind: '', text: 'Kosten vor Ort prüfen' }
+    ],
+    info: [
+      { k: 'Hund', v: 'Leine, vor Ort prüfen', state: 'maybe' },
+      { k: 'Kleinkind', v: 'Familien-Programm, KW-tauglich', state: 'ok' }
+    ],
+    desc: 'Geführte Familienwanderung zum Wasserbüffel-Lebensraum am Stadtweiher Leutkirch — explizit als Familien-Programm ausgeschrieben. <em>Sehr nah, passt im Mi-Nachmittag-Slot.</em>',
+    url: 'https://www.leutkirch.de/de/Urlaub/Kulturerlebnis/Veranstaltungen/Veranstaltungskalender',
+    urlLabel: 'leutkirch.de Veranstaltungen'
+  },
+  {
+    id: 'fruehlingsfest-dietmanns-do',
+    mapsQuery: 'Festplatz Dietmanns Bad Wurzach',
+    title: 'Frühlingsfest Dietmanns — Vatertag',
+    subtitle: 'Bad Wurzach · 180-Jahre-Jubiläum',
+    date: '2026-05-14',
+    dateLabel: { month: 'Mai', day: 14, dow: 'Do' },
+    time: '10:30 + 14:00 Blasmusik',
+    cat: 'event', catLabel: 'Volksfest',
+    emoji: '🎪', heroLabel: 'Zeltfest mit Blasmusik',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~25 km · 30 min' },
+      { kind: 'mixed', text: 'Mixed (Festzelt)' },
+      { kind: 'free', text: 'tagsüber frei' }
+    ],
+    info: [
+      { k: 'Hund', v: 'außen ja, Festzelt prüfen', state: 'maybe' },
+      { k: 'Kleinkind', v: 'tagsüber familienfreundlich', state: 'ok' }
+    ],
+    desc: 'Eines der größten Zeltfeste Oberschwabens (bis 9.000 Besucher), 180-Jahre-Jubiläum. Vatertag-Frühschoppen 10:30 mit MV Dietmanns + 14:00 "Die 4 Lustigen 5". <em>Tagsüber entspannt mit Blasmusik, abends laut/voll.</em>',
+    url: 'https://www.mv-dietmanns.de/',
+    urlLabel: 'mv-dietmanns.de'
+  },
+  {
+    id: 'skywalk-vatertag',
+    mapsQuery: 'Skywalk Allgäu Scheidegg',
+    title: 'Skywalk — Survival-Tag + Frühschoppen',
+    subtitle: 'Scheidegg · Vatertag-Programm',
+    date: '2026-05-14',
+    dateLabel: { month: 'Mai', day: 14, dow: 'Do' },
+    time: '10:00–18:00 Uhr',
+    cat: 'event', catLabel: 'Vatertag',
+    emoji: '🪓', heroLabel: 'Vatertag im Wald',
+    image: null,
+    googleRating: 4.5,
+    pills: [
+      { kind: 'dist', text: '📍 ~39 km · 42 min' },
+      { kind: 'outdoor', text: 'Outdoor' },
+      { kind: '', text: '~13 € Erw + Bier-Gutschein' }
+    ],
+    info: [
+      { k: 'Hund', v: 'ja, Leine', state: 'ok' },
+      { k: 'Kleinkind', v: 'Hauptwege KW-tauglich', state: 'ok' }
+    ],
+    desc: 'Vatertag-Spezial im Skywalk Allgäu: Papa-Kind-Aktivtag (Feuer-Challenge, Holzschnitzen, Outdoor-Küche) + Weißwurst-Frühschoppen mit Stadlblech-Musik. <em>Gratis-Bier-Gutschein für Papas.</em>',
+    url: 'https://www.waldwelt-allgaeu.de/',
+    urlLabel: 'waldwelt-allgaeu.de'
+  },
+  {
+    id: 'standkonzert-leutkirch-fr',
+    mapsQuery: 'Marktplatz Leutkirch',
+    title: 'Stand-Konzert Trachtenkapelle',
+    subtitle: 'Leutkirch · Marktplatz Open-Air',
+    date: '2026-05-15',
+    dateLabel: { month: 'Mai', day: 15, dow: 'Fr' },
+    time: '19:30 Uhr',
+    cat: 'event', catLabel: 'Konzert',
+    emoji: '🎺', heroLabel: 'Open-Air Standkonzert',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~12 km · 18 min' },
+      { kind: 'outdoor', text: 'Outdoor' },
+      { kind: 'free', text: 'Eintritt frei' }
+    ],
+    info: [
+      { k: 'Hund', v: 'ja, Leine', state: 'ok' },
+      { k: 'Kleinkind', v: 'kinderwagen-tauglich', state: 'ok' }
+    ],
+    desc: 'Trachtenkapelle Friesenhofen Open-Air auf dem Marktplatz Leutkirch. <em>Spät am Abend (19:30) — eher Erwachsene mit Sub-Group oder kurze Stippvisite.</em>',
+    url: 'https://www.leutkirch.de/de/Urlaub/Kulturerlebnis/Veranstaltungen/Veranstaltungskalender',
+    urlLabel: 'leutkirch.de Veranstaltungen'
+  },
+  {
+    id: 'radmarathon-isny-sa',
+    mapsQuery: 'Marktplatz Isny im Allgäu',
+    title: 'Allgäu Radmarathon',
+    subtitle: 'Isny · 1.500+ Radler · Festivalstimmung',
+    date: '2026-05-16',
+    dateLabel: { month: 'Mai', day: 16, dow: 'Sa' },
+    time: '07:00–19:00 Uhr',
+    cat: 'event', catLabel: 'Sport',
+    emoji: '🚴', heroLabel: 'Radmarathon-Festival',
+    image: null,
+    googleRating: 4.5,
+    pills: [
+      { kind: 'dist', text: '📍 ~23 km · 25 min' },
+      { kind: 'outdoor', text: 'Outdoor' },
+      { kind: 'free', text: 'Zuschauer frei' }
+    ],
+    info: [
+      { k: 'Hund', v: 'ja, Trubel beachten', state: 'maybe' },
+      { k: 'Kleinkind', v: 'KW-tauglich, lebhaft', state: 'ok' }
+    ],
+    desc: '1.500+ Radler starten/zielen auf dem historischen Marktplatz Isny — Festivalatmosphäre mit Begleitprogramm. <em>Gut kombinierbar mit Isny-Altstadt-Bummel.</em>',
+    url: 'https://www.isny.de/urlaub-aktiv/radfahren-allgaeu/radmarathon.html',
+    urlLabel: 'isny.de Radmarathon'
+  },
+  {
+    id: 'scheidegg-regionalmarkt-so',
+    mapsQuery: 'Pfarrplatz Scheidegg',
+    title: 'Regionalmarkt "Gutes von Berg & See"',
+    subtitle: 'Scheidegg · Pfarrplatz · Familienprogramm',
+    date: '2026-05-17',
+    dateLabel: { month: 'Mai', day: 17, dow: 'So' },
+    time: '11:00–17:00 Uhr',
+    cat: 'markt', catLabel: 'Regionalmarkt',
+    emoji: '🌼', heroLabel: 'Markt + Familienprogramm',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~38 km · 40 min' },
+      { kind: 'outdoor', text: 'Outdoor' },
+      { kind: 'free', text: 'Eintritt frei' }
+    ],
+    info: [
+      { k: 'Hund', v: 'ja, Leine', state: 'ok' },
+      { k: 'Kleinkind', v: 'Kinderschminken + Bastelaktionen', state: 'ok' }
+    ],
+    desc: 'Regionale Erzeuger, Kunsthandwerk, Heimathaus, Kutschfahrten, Bücherflohmarkt. <em>Echtes Familienprogramm: Kinderschminken, Kuhmelken üben, Kinder-Kässpätzle-Küche.</em> So 17.05. = Abreise-Tag — Start 11:00 wäre knapp, eher Plan B.',
+    url: 'https://www.scheidegg.de/regionalmarkt/',
+    urlLabel: 'scheidegg.de Regionalmarkt'
+  },
+  {
+    id: 'kinokonzert-isny-so',
+    mapsQuery: 'Kinopark Isny Lindauer Straße 2',
+    title: 'Film ab! — Kinokonzert',
+    subtitle: 'Isny · Stadtkapelle Open-Air',
+    date: '2026-05-17',
+    dateLabel: { month: 'Mai', day: 17, dow: 'So' },
+    time: '11:30 Uhr',
+    cat: 'event', catLabel: 'Konzert',
+    emoji: '🎬', heroLabel: 'Open-Air Kinokonzert',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~23 km · 25 min' },
+      { kind: 'outdoor', text: 'Outdoor' },
+      { kind: 'free', text: 'Eintritt frei' }
+    ],
+    info: [
+      { k: 'Hund', v: 'ja, Leine', state: 'ok' },
+      { k: 'Kleinkind', v: 'kinderwagen-tauglich', state: 'ok' }
+    ],
+    desc: 'Stadtkapelle Isny spielt Filmmusik open-air am Kinopark zum Kino-Jubiläum. <em>Kostenlos, sehr nah, perfekt für Sonntag-Vormittag.</em> Bei Regen ins Kurhaus.',
+    url: 'https://www.isny.de/veranstaltungen/veranstaltungskalender/',
+    urlLabel: 'isny.de Veranstaltungen'
+  },
+  {
+    id: 'fruehlingsfest-dietmanns-so',
+    mapsQuery: 'Festplatz Dietmanns Bad Wurzach',
+    title: 'Frühlingsfest Dietmanns — Sonntag',
+    subtitle: 'Dietmanns · Frühschoppen + Kinderflohmarkt',
+    date: '2026-05-17',
+    dateLabel: { month: 'Mai', day: 17, dow: 'So' },
+    time: '10:30 MV · 12:00 Kinderflohmarkt',
+    cat: 'event', catLabel: 'Volksfest',
+    emoji: '🎪', heroLabel: 'Familien-Sonntag',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~25 km · 30 min' },
+      { kind: 'mixed', text: 'Mixed (Festzelt)' },
+      { kind: 'free', text: 'tagsüber frei' }
+    ],
+    info: [
+      { k: 'Hund', v: 'außen ja, Festzelt prüfen', state: 'maybe' },
+      { k: 'Kleinkind', v: 'sehr familienfreundlich', state: 'ok' }
+    ],
+    desc: 'Sonntags-Familientag: 09:00 Zeltgottesdienst, 10:30 MV Haslach, ab 12:00 <em>Kinderflohmarkt</em>, 13:30 Brassexpress. Perfekter Programmpunkt vor Heimfahrt — wenn man bis ~13 Uhr bleibt.',
+    url: 'https://www.mv-dietmanns.de/',
+    urlLabel: 'mv-dietmanns.de'
   }
 ];
