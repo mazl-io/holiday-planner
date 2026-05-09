@@ -392,5 +392,255 @@ export const activities = [
     desc: '50+ Terrarien mit Schlangen, Echsen, Schildkröten, Spinnen — bestes Indoor-Tier-Erlebnis. <em>Hund muss draußen → Sub-Group ohne Hund nötig.</em> Kombinierbar mit Skywalk.',
     url: 'https://www.reptilienzoo-scheidegg.com/',
     urlLabel: 'reptilienzoo-scheidegg.com'
+  },
+  {
+    id: 'inatura-dornbirn',
+    mapsQuery: 'inatura Dornbirn',
+    title: 'inatura Erlebnis Naturschau',
+    subtitle: 'Dornbirn (AT) · Hands-on Naturmuseum',
+    match: 92,
+    cat: 'kultur', catLabel: 'Naturmuseum',
+    emoji: '🦋', heroLabel: 'Hands-on Naturwelt',
+    image: null,
+    googleRating: 4.6,
+    pills: [
+      { kind: 'dist', text: '📍 ~60 km · 50 min' },
+      { kind: 'indoor', text: 'Indoor' },
+      { kind: '', text: '~70 € / 5 Erw' }
+    ],
+    info: [
+      { k: 'Hund', v: 'nein (Museum)', state: 'no' },
+      { k: 'Kleinkind 1,5 J.', v: 'perfekt — alles auf Kinderhöhe', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'tägl. 10–18', state: 'ok' },
+      { k: 'Highlight', v: 'Schlechtwetter Plan A' }
+    ],
+    desc: 'Hands-on Naturmuseum auf 3 Etagen — Tiere, Pflanzen, Erdgeschichte zum Anfassen, Kurbeln, Drücken. <em>Genau das was bei Schlechtwetter mit Kleinkindern fehlt.</em> Kinderwagen-tauglich, Wickelraum.',
+    url: 'https://www.inatura.at',
+    urlLabel: 'inatura.at'
+  },
+  {
+    id: 'lufti-meckenbeuren',
+    mapsQuery: 'Lufti Kinderspielewelt Meckenbeuren',
+    title: 'Lufti Kinderspielewelt',
+    subtitle: 'Meckenbeuren · Indoor-Spielpark ab 0 J.',
+    match: 90,
+    cat: 'indoor', catLabel: 'Indoor',
+    emoji: '🎈', heroLabel: 'Indoor-Spielpark',
+    image: null,
+    googleRating: 4.4,
+    pills: [
+      { kind: 'dist', text: '📍 ~45 km · 40 min' },
+      { kind: 'indoor', text: 'Indoor' },
+      { kind: 'free', text: '~22 € (U2 frei)' }
+    ],
+    info: [
+      { k: 'Hund', v: 'nein (Indoor)', state: 'no' },
+      { k: 'Kleinkind 1,5 J.', v: 'ab 0 J., Kleinkindbereich', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'Di–So, Mo Ruhetag', state: 'ok' },
+      { k: 'Bonus', v: 'Bistro für Eltern' }
+    ],
+    desc: '2.500 m² Indoor-Spielpark explizit ab 0 Jahre, mit Kleinkindbereich. Sehr fair: Erw. nur 4,50 €, Kinder unter 2 frei. <em>Ideale Schlechtwetter-Notlösung.</em> Mo Ruhetag.',
+    url: 'https://www.lufti.info',
+    urlLabel: 'lufti.info'
+  },
+  {
+    id: 'spielfabrik-dornbirn',
+    mapsQuery: 'Spielfabrik Dornbirn',
+    title: 'Spielfabrik',
+    subtitle: 'Dornbirn (AT) · Kleinkind-Bereich abgegrenzt',
+    match: 88,
+    cat: 'indoor', catLabel: 'Indoor',
+    emoji: '🎢', heroLabel: 'Indoor-Spielpark',
+    image: null,
+    googleRating: 4.3,
+    pills: [
+      { kind: 'dist', text: '📍 ~60 km · 50 min' },
+      { kind: 'indoor', text: 'Indoor' },
+      { kind: '', text: '~30 € / 5 Erw + 2 Kleinkinder' }
+    ],
+    info: [
+      { k: 'Hund', v: 'nein (Indoor)', state: 'no' },
+      { k: 'Kleinkind 1,5 J.', v: 'eigener abgetrennter Bereich', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'tägl. 14–19, WE 10–19', state: 'ok' },
+      { k: 'Highlight', v: 'Mit inatura kombinierbar' }
+    ],
+    desc: 'Vorarlbergs erster Indoor-Spielplatz mit dezidiertem, abgetrenntem Kleinkindbereich (Softplay, Bällebad, Babyrutsche). <em>Geschützt von Großen.</em> Halbtages-Combo mit inatura möglich.',
+    url: 'https://www.spielfabrik.at',
+    urlLabel: 'spielfabrik.at'
+  },
+  {
+    id: 'bergbauernmuseum-diepolz',
+    mapsQuery: 'Allgäuer Bergbauernmuseum Diepolz',
+    title: 'Allgäuer Bergbauernmuseum',
+    subtitle: 'Diepolz/Immenstadt · Mixed mit Tieren',
+    match: 90,
+    cat: 'kultur', catLabel: 'Bauernhof',
+    emoji: '🐄', heroLabel: 'Bauern-Erlebnismuseum',
+    image: null,
+    googleRating: 4.6,
+    pills: [
+      { kind: 'dist', text: '📍 ~55 km · 50 min' },
+      { kind: 'mixed', text: 'Mixed (regenfest)' },
+      { kind: '', text: '~40 € / 5 Erw' }
+    ],
+    info: [
+      { k: 'Hund', v: 'außen ja, Leine', state: 'ok' },
+      { k: 'Kleinkind 1,5 J.', v: 'Hüpf-Heustock + Kuhmagen', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'tägl. 10–18', state: 'ok' },
+      { k: 'Bonus', v: 'Trettraktoren + Wickelraum' }
+    ],
+    desc: 'Begehbarer Kuhmagen, Hüpf-Heustock, viele Indoor-Stationen, echte Tiere zum Streicheln (Schafe, Kühe, Schweine), Trettraktor-Parcours. <em>Hund darf außen mit, Indoor-Anteil = sehr regenfest.</em>',
+    url: 'https://www.bergbauernmuseum.de',
+    urlLabel: 'bergbauernmuseum.de'
+  },
+  {
+    id: 'doppelmayr-zoo-wolfurt',
+    mapsQuery: 'Doppelmayr Zoo Wolfurt',
+    title: 'Doppelmayr Zoo',
+    subtitle: 'Wolfurt (AT) · Gratis-Zoo, 400 Tiere',
+    match: 82,
+    cat: 'natur', catLabel: 'Tierpark',
+    emoji: '🦘', heroLabel: 'Gratis-Zoo',
+    image: null,
+    googleRating: 4.5,
+    pills: [
+      { kind: 'dist', text: '📍 ~55 km · 50 min' },
+      { kind: 'outdoor', text: 'Outdoor' },
+      { kind: 'free', text: 'kostenlos' }
+    ],
+    info: [
+      { k: 'Hund', v: 'ja, Leine', state: 'ok' },
+      { k: 'Kleinkind 1,5 J.', v: 'KW-tauglich', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'ganzjährig 24/7', state: 'ok' },
+      { k: 'Bonus', v: 'Spielplatz gegenüber' }
+    ],
+    desc: 'Privater Gratis-Zoo mit 400 Tieren / 70 Arten: Mini-Esel, Riesenschildkröten, Kängurus, Alpakas, Nasenbären. <em>24/7 frei zugänglich, Hund willkommen. Achtung: keine Toiletten vor Ort.</em>',
+    url: 'https://www.doppelmayr.com/zoo/',
+    urlLabel: 'doppelmayr.com/zoo'
+  },
+  {
+    id: 'pfaender-bregenz',
+    mapsQuery: 'Pfänderbahn Bregenz',
+    title: 'Pfänderbahn + Alpenwildpark',
+    subtitle: 'Bregenz (AT) · Bergbahn + Wildpark',
+    match: 80,
+    cat: 'natur', catLabel: 'Berg',
+    emoji: '🚠', heroLabel: 'Bergbahn + Tiere',
+    image: null,
+    googleRating: 4.6,
+    pills: [
+      { kind: 'dist', text: '📍 ~50 km · 45 min' },
+      { kind: 'outdoor', text: 'Outdoor (Restaurant indoor)' },
+      { kind: '', text: '~90 € / 5 Erw Bahn' }
+    ],
+    info: [
+      { k: 'Hund', v: 'Bahn ja gratis, Wildpark NEIN', state: 'maybe' },
+      { k: 'Kleinkind 1,5 J.', v: 'Rundweg flach + Rutsche', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'tägl. 8–19', state: 'ok' },
+      { k: 'Highlight', v: 'Bodensee-Panorama' }
+    ],
+    desc: 'Bergbahn auf den Pfänder mit Bodensee-Panorama. Alpenwildpark gratis (Steinbock, Wildschwein, Rehe). <em>Hund-Logistik: Bahn + Gipfel ja, Wildpark nein → Sub-Group nötig.</em>',
+    url: 'https://www.pfaenderbahn.at',
+    urlLabel: 'pfaenderbahn.at'
+  },
+  {
+    id: 'linalauneland-waltenhofen',
+    mapsQuery: 'Lina Laune Land Waltenhofen',
+    title: 'Lina Laune Land',
+    subtitle: 'Waltenhofen · 4.000 m² Indoor',
+    match: 80,
+    cat: 'indoor', catLabel: 'Indoor',
+    emoji: '🎪', heroLabel: 'Indoor-Park',
+    image: null,
+    googleRating: 4.3,
+    pills: [
+      { kind: 'dist', text: '📍 ~55 km · 45 min' },
+      { kind: 'indoor', text: 'Indoor' },
+      { kind: '', text: '~34 € / 5 Erw + 2 Kleinkinder' }
+    ],
+    info: [
+      { k: 'Hund', v: 'nein (Indoor)', state: 'no' },
+      { k: 'Kleinkind 1,5 J.', v: 'Kleinkindbereich', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'tägl. 14–19, WE 10–19', state: 'ok' },
+      { k: 'Bonus', v: 'Hüpfburg + Bällebad' }
+    ],
+    desc: '4.000 m² Indoor-Park mit Kleinkindbereich (Bällebad, Rutsche, Hüpfburg). Solide Backup-Option zwischen Center Parcs und Kempten.',
+    url: 'https://linalauneland.de',
+    urlLabel: 'linalauneland.de'
+  },
+  {
+    id: 'bauernhofmuseum-illerbeuren',
+    mapsQuery: 'Schwäbisches Bauernhofmuseum Illerbeuren',
+    title: 'Bauernhofmuseum Illerbeuren',
+    subtitle: 'Kronburg · 30+ historische Höfe + Tiere',
+    match: 78,
+    cat: 'kultur', catLabel: 'Bauernhof',
+    emoji: '🐐', heroLabel: 'Freilichtmuseum',
+    image: null,
+    googleRating: 4.5,
+    pills: [
+      { kind: 'dist', text: '📍 ~35 km · 30 min' },
+      { kind: 'mixed', text: 'Mixed' },
+      { kind: '', text: '~40 € / 5 Erw' }
+    ],
+    info: [
+      { k: 'Hund', v: 'außen ja, Leine', state: 'ok' },
+      { k: 'Kleinkind 1,5 J.', v: 'Tiere + KW-tauglich', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'Di–So 10–18, Mo zu', state: 'ok' },
+      { k: 'Bonus', v: 'Biergarten' }
+    ],
+    desc: '30+ historische Häuser, Tiere (Geißen, Schweine, Schafe), niedriger Seilgarten, Kegelbahn. Sehr nah, authentisch, schöner Biergarten am Ende. <em>Mo Ruhetag.</em>',
+    url: 'https://www.bauernhofmuseum.de',
+    urlLabel: 'bauernhofmuseum.de'
+  },
+  {
+    id: 'allgaeulino-wertach',
+    mapsQuery: 'Allgäulino Wertach',
+    title: 'Allgäulino',
+    subtitle: 'Wertach · 3.000 m² Hallenspielplatz',
+    match: 75,
+    cat: 'indoor', catLabel: 'Indoor',
+    emoji: '🛝', heroLabel: 'Hallenspielplatz',
+    image: null,
+    googleRating: 4.4,
+    pills: [
+      { kind: 'dist', text: '📍 ~65 km · 50 min' },
+      { kind: 'indoor', text: 'Indoor' },
+      { kind: 'free', text: '~30 € (U3 nur 3,50)' }
+    ],
+    info: [
+      { k: 'Hund', v: 'nein (Indoor)', state: 'no' },
+      { k: 'Kleinkind 1,5 J.', v: '60 m² Kleinkindbereich', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'Mi–So (vorab prüfen!)', state: 'maybe' },
+      { k: 'Eintritt', v: 'sehr fair' }
+    ],
+    desc: '3.000 m² Hallenspielplatz mit eigenem 60 m² Kleinkindbereich. Sehr fair: U3 nur 3,50 €. <em>Vor Reise Öffnungstage prüfen — saisonal Mi–So.</em>',
+    url: 'https://www.allgaeulino.de',
+    urlLabel: 'allgaeulino.de'
+  },
+  {
+    id: 'sea-life-konstanz',
+    mapsQuery: 'SEA LIFE Konstanz',
+    title: 'SEA LIFE Konstanz',
+    subtitle: 'Konstanz · Aquarium + neue Insel 2026',
+    match: 70,
+    cat: 'highlight', catLabel: 'Aquarium',
+    emoji: '🐠', heroLabel: 'Indoor-Aquarium',
+    image: null,
+    googleRating: 4.2,
+    pills: [
+      { kind: 'dist', text: '📍 ~110 km · 80 min' },
+      { kind: 'indoor', text: 'Indoor' },
+      { kind: 'warn', text: '~110 € / 5 Erw' }
+    ],
+    info: [
+      { k: 'Hund', v: 'nein (Indoor)', state: 'no' },
+      { k: 'Kleinkind 1,5 J.', v: 'Berührungsbecken', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'tägl., Tickets vorab', state: 'ok' },
+      { k: 'Hinweis', v: 'eher Tagesausflug' }
+    ],
+    desc: 'Aquarium komplett indoor mit Berührungsbecken, neue "SEA LIFE Insel" bis 20.05.2026. <em>Etwas weit (~80 min), aber bei Dauerregen perfektes Highlight. Tickets online vorab buchen.</em>',
+    url: 'https://www.visitsealife.com/konstanz/',
+    urlLabel: 'visitsealife.com'
   }
 ];
