@@ -92,15 +92,23 @@ export function initSlideshow() {
     if (nextBtn) nextBtn.disabled = idx === list.length - 1;
   }
 
+  // Horizontal-only scroll: bewegt NUR den .slides-Container, nicht das Body.
+  // scrollIntoView wuerde sonst auch vertikal scrollen wenn der Slide unter
+  // der Falte liegt (z.B. nach Vergroessern des Logo-Headers).
+  function scrollContainerToSlide(container, slide, smooth) {
+    const sLeft = slide.getBoundingClientRect().left;
+    const cLeft = container.getBoundingClientRect().left;
+    container.scrollTo({
+      left: container.scrollLeft + (sLeft - cLeft),
+      behavior: smooth ? 'smooth' : 'auto'
+    });
+  }
+
   function goTo(idx, smooth) {
     const list = activeSlides(mode);
     if (list.length === 0) return;
     state[mode].idx = Math.max(0, Math.min(list.length - 1, idx));
-    list[state[mode].idx].scrollIntoView({
-      behavior: smooth ? 'smooth' : 'auto',
-      inline: 'start',
-      block: 'nearest'
-    });
+    scrollContainerToSlide(containers[mode], list[state[mode].idx], smooth);
     updateCounter();
     if (history.replaceState) {
       history.replaceState(null, '', `#${mode}-${state[mode].idx + 1}`);
@@ -123,7 +131,7 @@ export function initSlideshow() {
     updateCounter();
     const list = activeSlides(mode);
     if (list.length > 0) {
-      list[state[mode].idx].scrollIntoView({ behavior: 'auto', inline: 'start', block: 'nearest' });
+      scrollContainerToSlide(containers[mode], list[state[mode].idx], false);
     }
     if (history.replaceState) {
       history.replaceState(null, '', `#${mode}-${state[mode].idx + 1}`);
@@ -144,7 +152,7 @@ export function initSlideshow() {
     updateCounter();
     const list = activeSlides('events');
     if (mode === 'events' && list.length > 0) {
-      list[0].scrollIntoView({ behavior: 'auto', inline: 'start', block: 'nearest' });
+      scrollContainerToSlide(containers.events, list[0], false);
     }
   }
 
