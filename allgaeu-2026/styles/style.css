@@ -62,8 +62,12 @@ strong { font-weight: 700; }
 }
 .site-header .logo {
   display: block;
-  height: 140px; width: auto;
-  max-width: 100%;
+  /* Skaliert mit Viewport: min 70px (winzige Phones), wächst mit 22vw, max 140px */
+  width: clamp(70px, 22vw, 140px);
+  height: auto;             /* quadratisches Bild — Höhe folgt Width */
+  max-width: 100%;          /* hard safety: nie über Container */
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 4px 14px rgba(0,0,0,0.35);
 }
@@ -71,9 +75,6 @@ strong { font-weight: 700; }
   font-size: 0.74rem; opacity: 0.75; margin-top: 0.6rem;
   letter-spacing: 0.02em;
   text-align: center;
-}
-@media (min-width: 720px) {
-  .site-header .logo { height: 180px; }
 }
 
 /* ===== Layout: Mode tabs ===== */
