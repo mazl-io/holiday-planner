@@ -401,7 +401,7 @@ export const activities = [
     match: 92,
     cat: 'kultur', catLabel: 'Naturmuseum',
     emoji: '🦋', heroLabel: 'Hands-on Naturwelt',
-    image: null,
+    image: 'images/inatura-dornbirn.jpg',
     googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 ~60 km · 50 min' },
@@ -476,7 +476,7 @@ export const activities = [
     match: 90,
     cat: 'kultur', catLabel: 'Bauernhof',
     emoji: '🐄', heroLabel: 'Bauern-Erlebnismuseum',
-    image: null,
+    image: 'images/bergbauernmuseum-diepolz.jpg',
     googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 ~55 km · 50 min' },
@@ -501,7 +501,7 @@ export const activities = [
     match: 82,
     cat: 'natur', catLabel: 'Tierpark',
     emoji: '🦘', heroLabel: 'Gratis-Zoo',
-    image: null,
+    image: 'images/doppelmayr-zoo-wolfurt.jpg',
     googleRating: 4.5,
     pills: [
       { kind: 'dist', text: '📍 ~55 km · 50 min' },
@@ -526,7 +526,7 @@ export const activities = [
     match: 80,
     cat: 'natur', catLabel: 'Berg',
     emoji: '🚠', heroLabel: 'Bergbahn + Tiere',
-    image: null,
+    image: 'images/pfaender-bregenz.jpg',
     googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 ~50 km · 45 min' },
@@ -576,7 +576,7 @@ export const activities = [
     match: 78,
     cat: 'kultur', catLabel: 'Bauernhof',
     emoji: '🐐', heroLabel: 'Freilichtmuseum',
-    image: null,
+    image: 'images/bauernhofmuseum-illerbeuren.jpg',
     googleRating: 4.5,
     pills: [
       { kind: 'dist', text: '📍 ~35 km · 30 min' },
@@ -626,7 +626,7 @@ export const activities = [
     match: 70,
     cat: 'highlight', catLabel: 'Aquarium',
     emoji: '🐠', heroLabel: 'Indoor-Aquarium',
-    image: null,
+    image: 'images/sea-life-konstanz.jpg',
     googleRating: 4.2,
     pills: [
       { kind: 'dist', text: '📍 ~110 km · 80 min' },
@@ -776,7 +776,7 @@ export const activities = [
     match: 78, lo: true,
     cat: 'natur', catLabel: 'Tierpark',
     emoji: '🐰', heroLabel: 'Haustier-Hof',
-    image: null,
+    image: 'images/haustierhof-reutemuehle.jpg',
     googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 ~75 km · 75 min' },
@@ -801,7 +801,7 @@ export const activities = [
     match: 75, lo: true,
     cat: 'kultur', catLabel: 'Freilichtmuseum',
     emoji: '🏚️', heroLabel: 'UNESCO-Pfahlbauten',
-    image: null,
+    image: 'images/pfahlbauten-unteruhldingen.jpg',
     googleRating: 4.4,
     pills: [
       { kind: 'dist', text: '📍 ~80 km · 80 min' },
@@ -826,7 +826,7 @@ export const activities = [
     match: 70, lo: true,
     cat: 'natur', catLabel: 'Tierpark',
     emoji: '🐒', heroLabel: 'Berberaffen-Park',
-    image: null,
+    image: 'images/affenberg-salem.jpg',
     googleRating: 4.6,
     pills: [
       { kind: 'dist', text: '📍 ~80 km · 80 min' },
