@@ -39,9 +39,8 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* ===== Sticky Topbar (header + tabs) ===== */
+/* ===== Topbar (header scrolls away, tabs stay sticky) ===== */
 .topbar {
-  position: sticky; top: 0; z-index: 20;
   background: var(--inkwell);
 }
 
@@ -82,6 +81,7 @@ strong { font-weight: 700; }
   background: var(--card); border-bottom: 1px solid var(--border);
   display: flex; padding: 0 0.4rem;
   box-shadow: var(--shadow-sm);
+  position: sticky; top: 0; z-index: 19;
 }
 .mode-tab {
   flex: 1; min-height: 50px;
