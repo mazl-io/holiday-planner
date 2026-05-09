@@ -62,8 +62,8 @@ strong { font-weight: 700; }
 }
 .site-header .logo {
   display: block;
-  /* Skaliert mit Viewport: min 70px (winzige Phones), wächst mit 22vw, max 140px */
-  width: clamp(70px, 22vw, 140px);
+  /* Skaliert mit Viewport: min 140px (winzige Phones), wächst mit 44vw, max 280px */
+  width: clamp(140px, 44vw, 280px);
   height: auto;             /* quadratisches Bild — Höhe folgt Width */
   max-width: 100%;          /* hard safety: nie über Container */
   aspect-ratio: 1 / 1;
