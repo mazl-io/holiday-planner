@@ -426,7 +426,7 @@ export const activities = [
     match: 90,
     cat: 'indoor', catLabel: 'Indoor',
     emoji: '🎈', heroLabel: 'Indoor-Spielpark',
-    image: null,
+    image: 'images/lufti-meckenbeuren.jpg',
     googleRating: 4.4,
     pills: [
       { kind: 'dist', text: '📍 ~45 km · 40 min' },
@@ -451,7 +451,7 @@ export const activities = [
     match: 88,
     cat: 'indoor', catLabel: 'Indoor',
     emoji: '🎢', heroLabel: 'Indoor-Spielpark',
-    image: null,
+    image: 'images/spielfabrik-dornbirn.jpg',
     googleRating: 4.3,
     pills: [
       { kind: 'dist', text: '📍 ~60 km · 50 min' },
@@ -551,7 +551,7 @@ export const activities = [
     match: 80,
     cat: 'indoor', catLabel: 'Indoor',
     emoji: '🎪', heroLabel: 'Indoor-Park',
-    image: null,
+    image: 'images/linalauneland-waltenhofen.jpg',
     googleRating: 4.3,
     pills: [
       { kind: 'dist', text: '📍 ~55 km · 45 min' },
@@ -601,7 +601,7 @@ export const activities = [
     match: 75,
     cat: 'indoor', catLabel: 'Indoor',
     emoji: '🛝', heroLabel: 'Hallenspielplatz',
-    image: null,
+    image: 'images/allgaeulino-wertach.jpg',
     googleRating: 4.4,
     pills: [
       { kind: 'dist', text: '📍 ~65 km · 50 min' },
@@ -651,7 +651,7 @@ export const activities = [
     match: 92,
     cat: 'indoor', catLabel: 'Modellbahn',
     emoji: '🚂', heroLabel: 'Modellbahn-Ausstellung',
-    image: null,
+    image: 'images/urlauer-modellbahnen.jpg',
     googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~1 km · 3 min' },
@@ -676,7 +676,7 @@ export const activities = [
     match: 90,
     cat: 'kultur', catLabel: 'Schauhandwerk',
     emoji: '🍞', heroLabel: 'Schaumanufaktur',
-    image: null,
+    image: 'images/genussmanufaktur-urlau.jpg',
     googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~1 km · 3 min' },
@@ -701,7 +701,7 @@ export const activities = [
     match: 88,
     cat: 'natur', catLabel: 'Ponyhof',
     emoji: '🐴', heroLabel: 'Ponyhof + Streichelzoo',
-    image: null,
+    image: 'images/ponyhof-scheidegg.jpg',
     googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~50 km · 55 min' },
@@ -726,7 +726,7 @@ export const activities = [
     match: 85,
     cat: 'kultur', catLabel: 'Schaukäserei',
     emoji: '🧀', heroLabel: 'Käserei-Erlebnis',
-    image: null,
+    image: 'images/kaeserei-vogler-bad-wurzach.jpg',
     googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~22 km · 28 min' },
@@ -751,7 +751,7 @@ export const activities = [
     match: 80,
     cat: 'kultur', catLabel: 'Schaukäserei',
     emoji: '🐄', heroLabel: 'Schaukäserei live',
-    image: null,
+    image: 'images/kaeserei-zurwies-wangen.jpg',
     googleRating: null,
     pills: [
       { kind: 'dist', text: '📍 ~18 km · 22 min' },
