@@ -642,5 +642,205 @@ export const activities = [
     desc: 'Aquarium komplett indoor mit Berührungsbecken, neue "SEA LIFE Insel" bis 20.05.2026. <em>Etwas weit (~80 min), aber bei Dauerregen perfektes Highlight. Tickets online vorab buchen.</em>',
     url: 'https://www.visitsealife.com/konstanz/',
     urlLabel: 'visitsealife.com'
+  },
+  {
+    id: 'urlauer-modellbahnen',
+    mapsQuery: 'Urlauer Modellbahnen Leutkirch',
+    title: 'Urlauer Modellbahnen',
+    subtitle: 'Urlau · 250 m² Modellbahn · 3 min vom Park',
+    match: 92,
+    cat: 'indoor', catLabel: 'Modellbahn',
+    emoji: '🚂', heroLabel: 'Modellbahn-Ausstellung',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~1 km · 3 min' },
+      { kind: 'indoor', text: 'Indoor' },
+      { kind: 'free', text: '~18 € Familie · U3 frei' }
+    ],
+    info: [
+      { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
+      { k: 'Kleinkind 1,5 J.', v: 'fahrende Züge faszinieren', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'Mi/Fr/Sa/So 13–18', state: 'ok' },
+      { k: 'Highlight', v: 'Schlechtwetter + Mittagsschlaf' }
+    ],
+    desc: '250 m² Modellbahn-Ausstellung direkt im Reisedorf Urlau — nur 3 min vom Center Parcs. <em>Echtes Schlechtwetter-Highlight oder als kleine Pause zwischendurch.</em>',
+    url: 'https://www.urlauer-modellbahnen.de/',
+    urlLabel: 'urlauer-modellbahnen.de'
+  },
+  {
+    id: 'genussmanufaktur-urlau',
+    mapsQuery: 'Allgäuer Genussmanufaktur Urlau',
+    title: 'Allgäuer Genussmanufaktur',
+    subtitle: 'Urlau · Schau-Bäckerei + Brauerei + Café',
+    match: 90,
+    cat: 'kultur', catLabel: 'Schauhandwerk',
+    emoji: '🍞', heroLabel: 'Schaumanufaktur',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~1 km · 3 min' },
+      { kind: 'indoor', text: 'Indoor' },
+      { kind: 'free', text: '3 € Erw · U18 frei' }
+    ],
+    info: [
+      { k: 'Hund', v: 'Café/außen prüfen', state: 'maybe' },
+      { k: 'Kleinkind 1,5 J.', v: 'viel zu schauen', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'Mi–So 10–17', state: 'ok' },
+      { k: 'Bonus', v: 'Brauerei-Schau Sa 15–16' }
+    ],
+    desc: '1.000 m² Erlebnisort 3 min vom Park: Schau-Bäckerei, Schau-Brauerei (Mi 13–14, Sa 15–16), Café, Dorfladen, Töpferei, Webstuhl, Bibliothek mit 12.000 Antiqua-Büchern. <em>U18 frei!</em>',
+    url: 'https://www.allgaeuer-genussmanufaktur.de/',
+    urlLabel: 'allgaeuer-genussmanufaktur.de'
+  },
+  {
+    id: 'ponyhof-scheidegg',
+    mapsQuery: 'Erlebnis Ponyhof Scheidegg',
+    title: 'Erlebnis Ponyhof',
+    subtitle: 'Scheidegg · Streichelzoo + Indoor-Spielscheune',
+    match: 88,
+    cat: 'natur', catLabel: 'Ponyhof',
+    emoji: '🐴', heroLabel: 'Ponyhof + Streichelzoo',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~50 km · 55 min' },
+      { kind: 'mixed', text: 'Mixed (Spielscheune indoor)' },
+      { kind: 'free', text: '2 € + Reiten 3–8 €' }
+    ],
+    info: [
+      { k: 'Hund', v: 'vor Ort prüfen', state: 'maybe' },
+      { k: 'Kleinkind 1,5 J.', v: 'Streichelzoo + KW im Gehege', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'tägl. geöffnet', state: 'ok' },
+      { k: 'Bonus', v: 'Indoor-Spielscheune' }
+    ],
+    desc: 'Reiten ab 2 J. (Eltern führen), Streichelzoo (Llamas, Alpakas, Ziegen) <em>mit Kinderwagen begehbar ohne Zaun</em>, Indoor-Spielscheune mit Heuburg + Karussell + Trampolin als Schlechtwetter-Backup. Zwillinge knapp unter Reitalter — Streichelzoo allein lohnt aber.',
+    url: 'https://www.allgaeu-urlauber.de/familien-ausflugsziele/erlebnis-ponyhof-scheidegg/',
+    urlLabel: 'allgaeu-urlauber.de'
+  },
+  {
+    id: 'kaeserei-vogler-bad-wurzach',
+    mapsQuery: 'Käserei Vogler Bad Wurzach',
+    title: 'Käserei Vogler',
+    subtitle: 'Bad Wurzach · Museum + Schauproduktion + Spielplatz',
+    match: 85,
+    cat: 'kultur', catLabel: 'Schaukäserei',
+    emoji: '🧀', heroLabel: 'Käserei-Erlebnis',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~22 km · 28 min' },
+      { kind: 'mixed', text: 'Mixed (Allwetter)' },
+      { kind: 'free', text: 'Museum gratis' }
+    ],
+    info: [
+      { k: 'Hund', v: 'außen ja, prüfen', state: 'maybe' },
+      { k: 'Kleinkind 1,5 J.', v: 'Spielplatz + Schauschau', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'lang geöffnet', state: 'ok' },
+      { k: 'Bonus', v: 'Sennerstüble + Biergarten' }
+    ],
+    desc: 'Komplett-Erlebnis Allwetter: kostenloses Käsereimuseum + Schauproduktion + Sennerstüble-Restaurant + Kinderspielplatz + sonniger Biergarten. Mi 9–12, sonst lang geöffnet.',
+    url: 'https://www.kaeserei-vogler.de/',
+    urlLabel: 'kaeserei-vogler.de'
+  },
+  {
+    id: 'kaeserei-zurwies-wangen',
+    mapsQuery: 'Käserei Zurwies Wangen',
+    title: 'Bio-Käserei Zurwies',
+    subtitle: 'Wangen · Schaukäserei live · Mo–Fr 9:30',
+    match: 80,
+    cat: 'kultur', catLabel: 'Schaukäserei',
+    emoji: '🐄', heroLabel: 'Schaukäserei live',
+    image: null,
+    googleRating: null,
+    pills: [
+      { kind: 'dist', text: '📍 ~18 km · 22 min' },
+      { kind: 'indoor', text: 'Indoor' },
+      { kind: 'free', text: 'kostenlos' }
+    ],
+    info: [
+      { k: 'Hund', v: 'außen ja, prüfen', state: 'maybe' },
+      { k: 'Kleinkind 1,5 J.', v: 'Glasscheibe = sicher', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'Mo–Fr 8:30–13', state: 'ok' },
+      { k: 'Highlight', v: 'Live-Käse Mo–Fr 9:30' }
+    ],
+    desc: 'Käseherstellung live durch Glasscheibe Mo–Fr 9:30 Uhr. Bio-Heumilchkäserei, Slow Food Deutschland. <em>Kostenlos, kompakt, Vormittag-Slot.</em>',
+    url: 'https://www.zurwies.com/',
+    urlLabel: 'zurwies.com'
+  },
+  {
+    id: 'haustierhof-reutemuehle',
+    mapsQuery: 'Haustierhof Reutemühle Überlingen',
+    title: 'Haustierhof Reutemühle',
+    subtitle: 'Salem · 200+ Tierarten · Hund OK',
+    match: 78, lo: true,
+    cat: 'natur', catLabel: 'Tierpark',
+    emoji: '🐰', heroLabel: 'Haustier-Hof',
+    image: null,
+    googleRating: 4.6,
+    pills: [
+      { kind: 'dist', text: '📍 ~75 km · 75 min' },
+      { kind: 'outdoor', text: 'Outdoor' },
+      { kind: 'warn', text: 'über Radius' }
+    ],
+    info: [
+      { k: 'Hund', v: 'ja, ausdrücklich Leine', state: 'ok' },
+      { k: 'Kleinkind 1,5 J.', v: 'KW-tauglich', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'tägl. 10–19', state: 'ok' },
+      { k: 'Bonus', v: 'U3 frei' }
+    ],
+    desc: '200+ Haustier- und Bauernhof-Tierarten — vom Mini-Esel bis zum Riesenkaninchen. <em>Hund explizit an Leine erlaubt</em>, U3 frei. Über Standard-Radius (~75 min), aber für Bodensee-Tagestrip lohnenswert.',
+    url: 'https://www.haustierhof-reutemuehle.de/',
+    urlLabel: 'haustierhof-reutemuehle.de'
+  },
+  {
+    id: 'pfahlbauten-unteruhldingen',
+    mapsQuery: 'Pfahlbauten Unteruhldingen',
+    title: 'Pfahlbauten Unteruhldingen',
+    subtitle: 'Uhldingen · UNESCO-Welterbe · Hund auch innen',
+    match: 75, lo: true,
+    cat: 'kultur', catLabel: 'Freilichtmuseum',
+    emoji: '🏚️', heroLabel: 'UNESCO-Pfahlbauten',
+    image: null,
+    googleRating: 4.4,
+    pills: [
+      { kind: 'dist', text: '📍 ~80 km · 80 min' },
+      { kind: 'mixed', text: 'Mixed' },
+      { kind: 'warn', text: 'über Radius' }
+    ],
+    info: [
+      { k: 'Hund', v: 'ja — sogar in Häusern!', state: 'ok' },
+      { k: 'Kleinkind 1,5 J.', v: 'KW-tauglich, Steg-Erlebnis', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'ab 1.5. tägl.', state: 'ok' },
+      { k: 'Highlight', v: 'UNESCO-Welterbe' }
+    ],
+    desc: 'UNESCO-Welterbe-Freilichtmuseum mit rekonstruierten Pfahlbauten am Bodensee-Steg. <em>Hund sogar in den Häusern erlaubt — sehr selten!</em> Über Radius (~80 min), bei Bodensee-Tagestrip mit Reutemühle/Affenberg kombinierbar.',
+    url: 'https://www.pfahlbauten.de/',
+    urlLabel: 'pfahlbauten.de'
+  },
+  {
+    id: 'affenberg-salem',
+    mapsQuery: 'Affenberg Salem',
+    title: 'Affenberg Salem',
+    subtitle: 'Salem · Berberaffen · Mai = Babyaffen',
+    match: 70, lo: true,
+    cat: 'natur', catLabel: 'Tierpark',
+    emoji: '🐒', heroLabel: 'Berberaffen-Park',
+    image: null,
+    googleRating: 4.6,
+    pills: [
+      { kind: 'dist', text: '📍 ~80 km · 80 min' },
+      { kind: 'outdoor', text: 'Outdoor' },
+      { kind: 'warn', text: 'Hund nicht erlaubt' }
+    ],
+    info: [
+      { k: 'Hund', v: 'nein (Affen reagieren)', state: 'no' },
+      { k: 'Kleinkind 1,5 J.', v: 'Affen aus naher Hand', state: 'ok' },
+      { k: 'Saison Mai 26', v: 'Mai = Babyaffen!', state: 'ok' },
+      { k: 'Highlight', v: 'einmalig im Mai' }
+    ],
+    desc: 'Berberaffen direkt an der Hand füttern. <em>Mai = Babyaffen-Geburts-Saison — einmalig im Jahr!</em> Hund nicht erlaubt → einer muss draußen warten. Über Radius (~80 min), nur als Tagesausflug mit z.B. Pfahlbauten kombinieren.',
+    url: 'https://www.bodensee.eu/de/was-erleben/uebersichtskarte/affenberg-salem_poi58',
+    urlLabel: 'bodensee.eu Affenberg'
   }
 ];
