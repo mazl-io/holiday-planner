@@ -47,6 +47,12 @@ function heroBody(item) {
   `;
 }
 
+function renderFavBtn(id) {
+  return `<button class="fav-btn" type="button" data-fav-toggle="${id}" aria-label="Als Favorit markieren" aria-pressed="false">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  </button>`;
+}
+
 export function renderActivityCard(act) {
   const matchClass = act.lo ? 'lo' : '';
   return `
@@ -58,6 +64,7 @@ export function renderActivityCard(act) {
             <span class="num">${act.match}</span>
             <span class="label">Match</span>
           </span>
+          ${renderFavBtn(act.id)}
           ${heroBody(act)}
         </div>
         <div class="body-pad">
@@ -87,6 +94,7 @@ export function renderRestaurantCard(r) {
             <span class="num">${ratingNum}</span>
             <span class="label">Google</span>
           </span>
+          ${renderFavBtn(r.id)}
           ${heroBody(r)}
         </div>
         <div class="body-pad">
@@ -117,6 +125,7 @@ export function renderEventCard(ev) {
             <span class="day">${dl.day != null ? dl.day : ''}</span>
             <span class="dow">${dl.dow || ''}</span>
           </span>
+          ${renderFavBtn(ev.id)}
           ${heroBody(ev)}
         </div>
         <div class="body-pad">

@@ -1,9 +1,21 @@
 // Slideshow-Controller:
-// - Tabs (Aktivitaeten / Events)
+// - Tabs (Aktivitaeten / Events / Restaurants)
 // - Native Swipe via scroll-snap (siehe CSS)
-// - Counter, Prev/Next-Buttons, Tastatur (←/→, 1/2)
 // - Past-Event-Filter (basiert auf data-date / data-date-end)
-// - Deep-Link via #acts-3 / #events-5
+// - Favoriten via localStorage (Heart-Overlay auf Cards) + Filter-Toggle
+// - Deep-Link via #acts-3 / #events-5 / #restaurants-2
+
+const FAVS_KEY = 'holiday_favorites_v1';
+
+function loadFavs() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(FAVS_KEY) || '[]'));
+  } catch { return new Set(); }
+}
+function saveFavs(set) {
+  try { localStorage.setItem(FAVS_KEY, JSON.stringify([...set])); }
+  catch { /* storage voll oder Privatmodus — ignorieren */ }
+}
 
 export function initSlideshow() {
   const tabs = Array.from(document.querySelectorAll('.mode-tab'));
@@ -20,6 +32,9 @@ export function initSlideshow() {
   const pastBarBtn = document.getElementById('pastBarBtn');
   const emptyState = document.getElementById('emptyState');
   const swipeHint = document.getElementById('swipeHint');
+  const filterBar = document.getElementById('filterBar');
+  const favOnlyBtn = document.getElementById('favOnlyBtn');
+  const favCountEl = document.getElementById('favCount');
 
   // Past-event filtering
   const today = new Date();
@@ -27,6 +42,8 @@ export function initSlideshow() {
   const allEventSlides = Array.from(containers.events.querySelectorAll('.slide'));
   let pastShown = false;
   let pastCount = 0;
+  let favsOnly = false;
+  const favs = loadFavs();
 
   allEventSlides.forEach(s => {
     const endStr = s.dataset.dateEnd || s.dataset.date;
@@ -38,10 +55,50 @@ export function initSlideshow() {
     }
   });
 
-  function activeSlides(mode) {
-    const all = Array.from(containers[mode].querySelectorAll('.slide'));
-    if (mode !== 'events' || pastShown) return all;
-    return all.filter(s => !s.classList.contains('past'));
+  // Mark favorited slides on initial render
+  function applyFavMarks() {
+    Object.values(containers).forEach(container => {
+      Array.from(container.querySelectorAll('.slide')).forEach(slide => {
+        const isFav = favs.has(slide.dataset.id);
+        slide.classList.toggle('is-fav', isFav);
+        const btn = slide.querySelector('.fav-btn');
+        if (btn) btn.setAttribute('aria-pressed', isFav ? 'true' : 'false');
+      });
+    });
+  }
+  applyFavMarks();
+
+  // Zentral: setzt display:none/'' auf jeder Slide basierend auf allen aktiven Filtern
+  function applyFilters() {
+    Object.entries(containers).forEach(([k, container]) => {
+      Array.from(container.querySelectorAll('.slide')).forEach(slide => {
+        const isPast = slide.classList.contains('past');
+        const isFav = slide.classList.contains('is-fav');
+        let visible = true;
+        if (k === 'events' && isPast && !pastShown) visible = false;
+        if (favsOnly && !isFav) visible = false;
+        slide.style.display = visible ? '' : 'none';
+      });
+    });
+  }
+
+  function activeSlides(m) {
+    return Array.from(containers[m].querySelectorAll('.slide'))
+      .filter(s => s.style.display !== 'none');
+  }
+
+  function refreshFavCount() {
+    const n = favs.size;
+    if (favCountEl) favCountEl.textContent = n;
+    if (filterBar) filterBar.classList.toggle('hidden', n === 0);
+    // Wenn Filter an war und alle Favs gelöscht: Filter ausschalten
+    if (favsOnly && n === 0) {
+      favsOnly = false;
+      if (favOnlyBtn) {
+        favOnlyBtn.setAttribute('aria-pressed', 'false');
+      }
+      applyFilters();
+    }
   }
 
   const state = { acts: { idx: 0 }, events: { idx: 0 }, restaurants: { idx: 0 } };
@@ -140,11 +197,7 @@ export function initSlideshow() {
 
   function togglePast() {
     pastShown = !pastShown;
-    allEventSlides.forEach(s => {
-      if (s.classList.contains('past')) {
-        s.style.display = pastShown ? '' : 'none';
-      }
-    });
+    applyFilters();
     state.events.idx = 0;
     refreshBadges();
     refreshPastBar();
@@ -156,11 +209,50 @@ export function initSlideshow() {
     }
   }
 
+  function toggleFavsOnly() {
+    favsOnly = !favsOnly;
+    if (favOnlyBtn) favOnlyBtn.setAttribute('aria-pressed', favsOnly ? 'true' : 'false');
+    applyFilters();
+    state[mode].idx = 0;
+    refreshBadges();
+    refreshEmpty();
+    updateCounter();
+    const list = activeSlides(mode);
+    if (list.length > 0) {
+      scrollContainerToSlide(containers[mode], list[0], false);
+    }
+  }
+
+  function handleFavClick(id) {
+    if (favs.has(id)) favs.delete(id);
+    else favs.add(id);
+    saveFavs(favs);
+    applyFavMarks();
+    refreshFavCount();
+    refreshBadges();
+    if (favsOnly) {
+      // Filter ist aktiv — Card ggf. gerade aus-/eingeblendet
+      applyFilters();
+      refreshEmpty();
+      updateCounter();
+    }
+  }
+
   // Wire-up
   tabs.forEach(t => t.addEventListener('click', () => setMode(t.dataset.mode)));
   if (prevBtn) prevBtn.addEventListener('click', () => goTo(state[mode].idx - 1, true));
   if (nextBtn) nextBtn.addEventListener('click', () => goTo(state[mode].idx + 1, true));
   if (pastBarBtn) pastBarBtn.addEventListener('click', togglePast);
+  if (favOnlyBtn) favOnlyBtn.addEventListener('click', toggleFavsOnly);
+
+  // Heart click delegation: ein einziger Listener fuer alle Cards
+  document.body.addEventListener('click', (e) => {
+    const btn = e.target.closest('.fav-btn');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    handleFavClick(btn.dataset.favToggle);
+  });
 
   // Mouse drag-to-swipe (desktop): Click+Halten und horizontal ziehen
   Object.values(containers).forEach(root => {
@@ -226,10 +318,9 @@ export function initSlideshow() {
     if (e.key === '3') setMode('restaurants');
   });
 
-  // Initial — hide past events visually
-  allEventSlides.forEach(s => {
-    if (s.classList.contains('past')) s.style.display = 'none';
-  });
+  // Initial — apply all filters (past events + favorites if active)
+  applyFilters();
+  refreshFavCount();
 
   // Deep-link via hash
   const hash = window.location.hash.match(/^#(acts|events|restaurants)-(\d+)$/);

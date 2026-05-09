@@ -77,12 +77,44 @@ strong { font-weight: 700; }
 }
 
 /* ===== Layout: Mode tabs ===== */
+.sticky-bar {
+  position: sticky; top: 0; z-index: 19;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
 .mode-tabs {
   background: var(--card); border-bottom: 1px solid var(--border);
   display: flex; padding: 0 0.4rem;
-  box-shadow: var(--shadow-sm);
-  position: sticky; top: 0; z-index: 19;
 }
+
+/* Filter bar (under tabs, hidden when no favorites) */
+.filter-bar {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--aulait-hi);
+  border-bottom: 1px solid var(--border);
+  padding: 0.4rem 0.6rem;
+}
+.filter-btn {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  background: var(--card); color: var(--lunar);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font: inherit; font-size: 0.78rem; font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.filter-btn svg { color: #ff5c75; flex-shrink: 0; }
+.filter-btn .count {
+  background: var(--aulait); color: var(--lunar);
+  border-radius: 999px; padding: 0.05rem 0.45rem;
+  font-size: 0.7rem; font-weight: 700;
+}
+.filter-btn:hover { background: var(--aulait); }
+.filter-btn[aria-pressed="true"] {
+  background: #ff5c75; color: white; border-color: #ff5c75;
+}
+.filter-btn[aria-pressed="true"] svg { color: white; }
+.filter-btn[aria-pressed="true"] .count { background: rgba(255,255,255,0.25); color: white; }
 .mode-tab {
   flex: 1; min-height: 50px;
   background: none; border: none; color: var(--muted);
@@ -277,6 +309,29 @@ strong { font-weight: 700; }
   letter-spacing: 0.1em; text-transform: uppercase;
   padding: 0.15rem 0 0.32rem; color: var(--muted);
 }
+
+/* ===== Component: Favorite (heart) overlay ===== */
+.fav-btn {
+  position: absolute; bottom: 0.7rem; right: 0.7rem;
+  width: 42px; height: 42px;
+  background: rgba(0,0,0,0.55);
+  color: rgba(255,255,255,0.95);
+  border: 0; border-radius: 50%;
+  cursor: pointer; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  z-index: 3;
+  transition: transform 0.15s, background 0.18s, color 0.18s;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.fav-btn svg { fill: transparent; transition: fill 0.18s; }
+.fav-btn:hover { background: rgba(0,0,0,0.75); }
+.fav-btn:active { transform: scale(0.88); }
+.slide.is-fav .fav-btn {
+  background: rgba(255,255,255,0.95);
+  color: #ff5c75;
+}
+.slide.is-fav .fav-btn svg { fill: currentColor; }
 
 /* ===== Component: Card body ===== */
 .body-pad {
