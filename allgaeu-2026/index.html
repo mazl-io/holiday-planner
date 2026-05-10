@@ -8,6 +8,8 @@
 <title>Allgäu — Ideen vor Ort</title>
 <base href="/allgaeu-2026/">
 <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+<link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -31,10 +33,18 @@
       Restaurants <span class="badge" id="badgeRestaurants">–</span>
     </button>
   </nav>
-  <div class="filter-bar hidden" id="filterBar">
-    <button class="filter-btn" id="favOnlyBtn" type="button" aria-pressed="false">
+  <div class="controls">
+    <label class="sort-ctl">
+      <span aria-hidden="true">↕</span>
+      <select id="sortSelect" aria-label="Sortierung"></select>
+    </label>
+    <button class="view-toggle" id="viewToggleBtn" type="button" aria-pressed="false" aria-label="Karte anzeigen">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" fill="currentColor"/></svg>
+      <span class="view-toggle-label">Karte</span>
+    </button>
+    <button class="filter-btn hidden" id="favOnlyBtn" type="button" aria-pressed="false">
       <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/></svg>
-      Nur Favoriten <span class="count" id="favCount">0</span>
+      Favoriten <span class="count" id="favCount">0</span>
     </button>
   </div>
 </div>
@@ -48,6 +58,8 @@
 <section class="slides hidden" id="slidesEvents" role="tabpanel" aria-label="Events"></section>
 <section class="slides hidden" id="slidesRestaurants" role="tabpanel" aria-label="Restaurants"></section>
 
+<section class="map-view hidden" id="mapView" aria-label="Karte"><div id="map"></div></section>
+
 <div class="empty-state hidden" id="emptyState">
   <div>
     <div class="emoji">📭</div>
@@ -57,6 +69,7 @@
 
 <div class="swipe-hint" id="swipeHint">↔ wischen oder Pfeile</div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script type="module" src="src/main.js?v=20260506b"></script>
 </body>
 </html>

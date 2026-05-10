@@ -87,13 +87,49 @@ strong { font-weight: 700; }
   display: flex; padding: 0 0.4rem;
 }
 
-/* Filter bar (under tabs, hidden when no favorites) */
-.filter-bar {
-  display: flex; align-items: center; justify-content: center;
+/* Controls bar (sort + view toggle + favorites filter) */
+.controls {
+  display: flex; align-items: center; gap: 0.5rem;
   background: var(--aulait-hi);
   border-bottom: 1px solid var(--border);
   padding: 0.4rem 0.6rem;
+  flex-wrap: wrap;
 }
+.sort-ctl {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.75rem; color: var(--muted);
+  margin-right: auto;
+}
+.sort-ctl select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  font: inherit; font-size: 0.8rem; font-weight: 600;
+  color: var(--inkwell);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M3 5l3 3 3-3' stroke='%236E7A7B' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.4rem center;
+  padding-right: 1.5rem;
+}
+.view-toggle {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: var(--card); color: var(--lunar);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font: inherit; font-size: 0.75rem; font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.view-toggle svg { color: var(--lunar); flex-shrink: 0; }
+.view-toggle:hover { background: var(--aulait); }
+.view-toggle[aria-pressed="true"] {
+  background: var(--inkwell); color: var(--aulait); border-color: var(--inkwell);
+}
+.view-toggle[aria-pressed="true"] svg { color: var(--aulait); }
 .filter-btn {
   display: inline-flex; align-items: center; gap: 0.35rem;
   background: var(--card); color: var(--lunar);
@@ -418,6 +454,62 @@ a.pill.dist:hover { text-decoration: underline; }
   text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--muted);
 }
+
+/* ===== Map view ===== */
+.map-view {
+  position: relative;
+  height: calc(100dvh - 200px);
+  min-height: 400px;
+  width: 100%;
+  background: var(--aulait-hi);
+}
+#map {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+/* Custom marker popup styling */
+.leaflet-popup-content {
+  margin: 0.5rem 0.7rem !important;
+  font-family: var(--font-ui) !important;
+}
+.map-popup-title {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 0.95rem;
+  color: var(--inkwell);
+  display: block; margin-bottom: 0.15rem;
+}
+.map-popup-sub {
+  font-size: 0.72rem; color: var(--muted);
+  display: block; margin-bottom: 0.35rem;
+}
+.map-popup-meta {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.72rem;
+}
+.map-popup-meta .star { color: #d8a945; }
+/* Category-colored markers (override leaflet defaults via custom div icons) */
+.marker-pin {
+  width: 28px; height: 36px;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+.marker-pin::before {
+  content: ""; position: absolute; inset: 0;
+  background: var(--pin-color, #3F4E4F);
+  border: 2px solid white;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.marker-pin span { position: relative; z-index: 1; transform: translateY(-2px); }
+.marker-pin.act { --pin-color: #3F4E4F; }
+.marker-pin.event { --pin-color: #A27B5B; }
+.marker-pin.restaurant { --pin-color: #b85e3a; }
+.marker-pin.home { --pin-color: #2C3639; }
 
 /* ===== Component: Empty state ===== */
 .empty-state {

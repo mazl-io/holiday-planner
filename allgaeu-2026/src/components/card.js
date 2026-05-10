@@ -47,6 +47,20 @@ function heroBody(item) {
   `;
 }
 
+// Hilfsfunktionen fuer Sortier-Daten — werden als data-Attribute in jede slide geschrieben.
+function distMinFrom(item) {
+  const p = (item.pills || []).find(p => p.kind === 'dist');
+  if (!p) return 9999;
+  const m = String(p.text).match(/(\d+)\s*min/);
+  return m ? parseInt(m[1], 10) : 9999;
+}
+function priceLevelFrom(item) {
+  const p = (item.pills || []).find(p => p.kind === 'price');
+  if (!p) return 9;
+  const m = String(p.text).match(/€+/);
+  return m ? m[0].length : 9;
+}
+
 function renderFavBtn(id) {
   return `<button class="fav-btn" type="button" data-fav-toggle="${id}" aria-label="Als Favorit markieren" aria-pressed="false">
     <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
@@ -55,8 +69,9 @@ function renderFavBtn(id) {
 
 export function renderActivityCard(act) {
   const matchClass = act.lo ? 'lo' : '';
+  const sortAttrs = `data-sort-match="${act.match || 0}" data-sort-rating="${act.googleRating ?? 0}" data-sort-dist="${distMinFrom(act)}"`;
   return `
-    <article class="slide" data-id="${act.id}">
+    <article class="slide" data-id="${act.id}" ${sortAttrs}>
       <div class="slide-card">
         ${heroOpenTag(act)}
           <span class="cat-pill">${act.catLabel}</span>
@@ -85,8 +100,9 @@ export function renderActivityCard(act) {
 export function renderRestaurantCard(r) {
   // Restaurants nutzen statt Match-Score eine Rating-Badge mit den Sternen.
   const ratingNum = r.googleRating != null ? r.googleRating.toFixed(1) : '–';
+  const sortAttrs = `data-sort-rating="${r.googleRating ?? 0}" data-sort-dist="${distMinFrom(r)}" data-sort-price="${priceLevelFrom(r)}"`;
   return `
-    <article class="slide" data-id="${r.id}">
+    <article class="slide" data-id="${r.id}" ${sortAttrs}>
       <div class="slide-card">
         ${heroOpenTag(r)}
           <span class="cat-pill">${r.catLabel}</span>
@@ -114,7 +130,8 @@ export function renderRestaurantCard(r) {
 
 export function renderEventCard(ev) {
   const dl = ev.dateLabel || {};
-  const dataAttrs = `data-id="${ev.id}" data-date="${ev.date}"${ev.dateEnd ? ` data-date-end="${ev.dateEnd}"` : ''}`;
+  const sortAttrs = `data-sort-date="${ev.date}" data-sort-rating="${ev.googleRating ?? 0}" data-sort-dist="${distMinFrom(ev)}"`;
+  const dataAttrs = `data-id="${ev.id}" data-date="${ev.date}"${ev.dateEnd ? ` data-date-end="${ev.dateEnd}"` : ''} ${sortAttrs}`;
   return `
     <article class="slide" ${dataAttrs}>
       <div class="slide-card">

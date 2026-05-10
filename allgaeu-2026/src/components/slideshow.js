@@ -3,9 +3,32 @@
 // - Native Swipe via scroll-snap (siehe CSS)
 // - Past-Event-Filter (basiert auf data-date / data-date-end)
 // - Favoriten via localStorage (Heart-Overlay auf Cards) + Filter-Toggle
+// - Sortierung pro Tab via Select
+// - View-Toggle Liste ↔ Karte (Leaflet via map.js)
 // - Deep-Link via #acts-3 / #events-5 / #restaurants-2
 
+import { renderMarkers } from './map.js?v=20260510';
+
 const FAVS_KEY = 'holiday_favorites_v1';
+
+// Sort-Optionen pro Mode. Erste = default beim Tab-Wechsel.
+const SORT_OPTIONS = {
+  acts: [
+    { key: 'match',  label: 'Match',     dir: -1 },
+    { key: 'rating', label: 'Bewertung', dir: -1 },
+    { key: 'dist',   label: 'Distanz',   dir:  1 }
+  ],
+  events: [
+    { key: 'date',   label: 'Datum',     dir:  1 },
+    { key: 'dist',   label: 'Distanz',   dir:  1 },
+    { key: 'rating', label: 'Bewertung', dir: -1 }
+  ],
+  restaurants: [
+    { key: 'rating', label: 'Bewertung', dir: -1 },
+    { key: 'dist',   label: 'Distanz',   dir:  1 },
+    { key: 'price',  label: 'Preis',     dir:  1 }
+  ]
+};
 
 function loadFavs() {
   try {
@@ -17,7 +40,8 @@ function saveFavs(set) {
   catch { /* storage voll oder Privatmodus — ignorieren */ }
 }
 
-export function initSlideshow() {
+export function initSlideshow(opts = {}) {
+  const itemsById = opts.itemsById || {};
   const tabs = Array.from(document.querySelectorAll('.mode-tab'));
   const containers = {
     acts: document.getElementById('slidesActs'),
@@ -32,9 +56,11 @@ export function initSlideshow() {
   const pastBarBtn = document.getElementById('pastBarBtn');
   const emptyState = document.getElementById('emptyState');
   const swipeHint = document.getElementById('swipeHint');
-  const filterBar = document.getElementById('filterBar');
   const favOnlyBtn = document.getElementById('favOnlyBtn');
   const favCountEl = document.getElementById('favCount');
+  const sortSelect = document.getElementById('sortSelect');
+  const viewToggleBtn = document.getElementById('viewToggleBtn');
+  const mapView = document.getElementById('mapView');
 
   // Past-event filtering
   const today = new Date();
@@ -43,6 +69,8 @@ export function initSlideshow() {
   let pastShown = false;
   let pastCount = 0;
   let favsOnly = false;
+  let viewMode = 'list'; // 'list' | 'map'
+  const sortByMode = { acts: 'match', events: 'date', restaurants: 'rating' };
   const favs = loadFavs();
 
   allEventSlides.forEach(s => {
@@ -90,7 +118,7 @@ export function initSlideshow() {
   function refreshFavCount() {
     const n = favs.size;
     if (favCountEl) favCountEl.textContent = n;
-    if (filterBar) filterBar.classList.toggle('hidden', n === 0);
+    if (favOnlyBtn) favOnlyBtn.classList.toggle('hidden', n === 0);
     // Wenn Filter an war und alle Favs gelöscht: Filter ausschalten
     if (favsOnly && n === 0) {
       favsOnly = false;
@@ -103,6 +131,59 @@ export function initSlideshow() {
 
   const state = { acts: { idx: 0 }, events: { idx: 0 }, restaurants: { idx: 0 } };
   let mode = 'acts';
+
+  // Sortiert die Slides im aktuellen Mode-Container neu (DOM appendChild = re-order).
+  function applySort(m, sortKey) {
+    const opt = SORT_OPTIONS[m].find(o => o.key === sortKey) || SORT_OPTIONS[m][0];
+    const dir = opt.dir;
+    const container = containers[m];
+    const slides = Array.from(container.querySelectorAll('.slide'));
+    slides.sort((a, b) => {
+      if (opt.key === 'date') {
+        const av = a.dataset.sortDate || '';
+        const bv = b.dataset.sortDate || '';
+        return dir * av.localeCompare(bv);
+      }
+      const attr = 'sort' + opt.key.charAt(0).toUpperCase() + opt.key.slice(1);
+      const av = parseFloat(a.dataset[attr] || '0');
+      const bv = parseFloat(b.dataset[attr] || '0');
+      return dir * (av - bv);
+    });
+    slides.forEach(s => container.appendChild(s));
+    sortByMode[m] = opt.key;
+  }
+
+  // Befuellt das Sort-Select mit den Optionen fuer den aktuellen Mode + waehlt den gespeicherten Wert.
+  function refreshSortOptions() {
+    if (!sortSelect) return;
+    sortSelect.innerHTML = SORT_OPTIONS[mode]
+      .map(o => `<option value="${o.key}">${o.label}</option>`)
+      .join('');
+    sortSelect.value = sortByMode[mode] || SORT_OPTIONS[mode][0].key;
+  }
+
+  async function setViewMode(next) {
+    if (next === viewMode) return;
+    viewMode = next;
+    if (viewToggleBtn) {
+      viewToggleBtn.setAttribute('aria-pressed', viewMode === 'map' ? 'true' : 'false');
+      const lbl = viewToggleBtn.querySelector('.view-toggle-label');
+      if (lbl) lbl.textContent = viewMode === 'map' ? 'Liste' : 'Karte';
+    }
+    if (viewMode === 'map') {
+      // alle slides containers verstecken, map zeigen
+      Object.values(containers).forEach(c => c.classList.add('hidden'));
+      if (pastBar) pastBar.classList.remove('show');
+      if (mapView) mapView.classList.remove('hidden');
+      if (sortSelect) sortSelect.disabled = true;
+      await renderMarkers(mode, activeSlides(mode), itemsById);
+    } else {
+      if (mapView) mapView.classList.add('hidden');
+      Object.entries(containers).forEach(([k, c]) => c.classList.toggle('hidden', k !== mode));
+      if (sortSelect) sortSelect.disabled = false;
+      refreshPastBar();
+    }
+  }
 
   function refreshBadges() {
     document.getElementById('badgeActs').textContent = activeSlides('acts').length;
@@ -180,15 +261,21 @@ export function initSlideshow() {
       t.classList.toggle('active', active);
       t.setAttribute('aria-selected', active ? 'true' : 'false');
     });
-    Object.keys(containers).forEach(k => {
-      containers[k].classList.toggle('hidden', k !== mode);
-    });
+    if (viewMode === 'list') {
+      Object.keys(containers).forEach(k => {
+        containers[k].classList.toggle('hidden', k !== mode);
+      });
+    }
+    refreshSortOptions();
     refreshPastBar();
     refreshEmpty();
     updateCounter();
     const list = activeSlides(mode);
     if (list.length > 0) {
       scrollContainerToSlide(containers[mode], list[state[mode].idx], false);
+    }
+    if (viewMode === 'map') {
+      renderMarkers(mode, list, itemsById);
     }
     if (history.replaceState) {
       history.replaceState(null, '', `#${mode}-${state[mode].idx + 1}`);
@@ -207,6 +294,7 @@ export function initSlideshow() {
     if (mode === 'events' && list.length > 0) {
       scrollContainerToSlide(containers.events, list[0], false);
     }
+    if (viewMode === 'map' && mode === 'events') renderMarkers(mode, list, itemsById);
   }
 
   function toggleFavsOnly() {
@@ -221,6 +309,7 @@ export function initSlideshow() {
     if (list.length > 0) {
       scrollContainerToSlide(containers[mode], list[0], false);
     }
+    if (viewMode === 'map') renderMarkers(mode, list, itemsById);
   }
 
   function handleFavClick(id) {
@@ -231,10 +320,10 @@ export function initSlideshow() {
     refreshFavCount();
     refreshBadges();
     if (favsOnly) {
-      // Filter ist aktiv — Card ggf. gerade aus-/eingeblendet
       applyFilters();
       refreshEmpty();
       updateCounter();
+      if (viewMode === 'map') renderMarkers(mode, activeSlides(mode), itemsById);
     }
   }
 
@@ -244,6 +333,16 @@ export function initSlideshow() {
   if (nextBtn) nextBtn.addEventListener('click', () => goTo(state[mode].idx + 1, true));
   if (pastBarBtn) pastBarBtn.addEventListener('click', togglePast);
   if (favOnlyBtn) favOnlyBtn.addEventListener('click', toggleFavsOnly);
+  if (sortSelect) sortSelect.addEventListener('change', (e) => {
+    applySort(mode, e.target.value);
+    state[mode].idx = 0;
+    const list = activeSlides(mode);
+    if (list.length > 0) scrollContainerToSlide(containers[mode], list[0], false);
+    if (viewMode === 'map') renderMarkers(mode, list, itemsById);
+  });
+  if (viewToggleBtn) viewToggleBtn.addEventListener('click', () => {
+    setViewMode(viewMode === 'list' ? 'map' : 'list');
+  });
 
   // Heart click delegation: ein einziger Listener fuer alle Cards
   document.body.addEventListener('click', (e) => {
@@ -318,9 +417,10 @@ export function initSlideshow() {
     if (e.key === '3') setMode('restaurants');
   });
 
-  // Initial — apply all filters (past events + favorites if active)
+  // Initial — apply all filters (past events + favorites if active) + sort options
   applyFilters();
   refreshFavCount();
+  refreshSortOptions();
 
   // Deep-link via hash
   const hash = window.location.hash.match(/^#(acts|events|restaurants)-(\d+)$/);
